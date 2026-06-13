@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contáctanos para realizar pedidos personalizados o consultar nuestros productos Bonny."
+    />
+    <title>Contacto | Bonny</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500&family=Rouge+Script&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/contacto.css" />
+  </head>
+
+  <body>
+    
+    <header>
+      <div class="logo">
+        <img src="media/imagenes/bonny_logo.png" alt="Logo de Bonny" />
+        <span class="brand-name">Bonny</span>
+      </div>
+
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="promociones.html">Promociones</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="contacto">
+      <div class="contacto-texto">
+        <h1>Contáctanos</h1>
+        <p>
+          Escríbenos para realizar pedidos personalizados o consultar sobre
+          nuestros productos artesanales. Respondemos en menos de 24 horas.
+        </p>
+
+        <div class="contacto-info">
+          <div class="contacto-info-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>+51 999 999 999</span>
+          </div>
+          <div class="contacto-info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>bonny@correo.com</span>
+          </div>
+          <div class="contacto-info-item">
+            <i class="fa-brands fa-instagram"></i>
+            <span>@bonny.regalos</span>
+          </div>
+          <div class="contacto-info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Trujillo, La Libertad</span>
+          </div>
+        </div>
+
+        <img
+          src="media/imagenes/RAMOS FLORES/ramo1.jpg"
+          alt="Ramo artesanal de Bonny"
+        />
+      </div>
+
+      <form class="formulario">
+        <h2>Envíanos un mensaje</h2>
+
+        <label for="nombre">Nombre completo</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ingresa tu nombre"
+          required
+        />
+
+        <label for="correo">Correo electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="Ingresa tu correo"
+          required
+        />
+
+        <label for="asunto">Asunto</label>
+        <select id="asunto" name="asunto">
+          <option value="">Selecciona un asunto</option>
+          <option value="pedido">Hacer un pedido</option>
+          <option value="personalizado">Producto personalizado</option>
+          <option value="consulta">Consulta general</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          placeholder="Escribe tu mensaje aquí..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          <i class="fa-solid fa-paper-plane"></i>&nbsp; Enviar mensaje
+        </button>
+      </form>
+    </section>
+
+    <footer>
+      <p>
+        <i class="fa-solid fa-heart"></i>
+        &copy; 2026 Bonny &mdash; Todos los derechos reservados
+      </p>
+    </footer>
+  </body>
+</html>
