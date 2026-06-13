@@ -1,0 +1,52 @@
+.promotions {
+    .specials {
+        background-color: #D85B7B;
+        justify-items: center;
+        h2, h3, section {padding: 16px;}
+        h2, h3 {color: white;}
+        h2 {font: normal 36px 'Cormorant Garamond';}
+        h3 {font: normal 28px 'Cormorant Garamond';}
+
+        section {
+            width: 100%;
+            display: flex; justify-content: space-around;
+
+            div {
+                display: flex; flex-direction: column;
+                justify-content: center;
+                background-color: white; padding: 8px;
+                font: normal 32px 'Cormorant Garamond';
+                color: #D85B7B; text-align: center;
+                width: 144px; height: 108px; border-radius: 8px;
+                margin: 32px;
+            }
+        }
+    }
+
+    .advertising {
+        margin: 32px; background-color: #FFE4EB;
+        display: grid; border-radius: 32px;
+        grid-template-columns: [izq] 20vh [h_center] 10vh [der];
+        grid-template-rows: [sup] 1rem [v_center] 1fr [inf];
+
+        div {margin: 0; border-radius: 0;}
+
+        .icon {
+            background-color: green;
+            grid-row: sup / inf;
+            display: flex; justify-content: center;
+            align-items: center;
+
+            img {width: 24%; background-color: white;}
+        }
+
+        .t1 {
+            width: 100%;
+            background-color: aliceblue;
+        }
+
+        .t2 {
+
+        }
+    }
+}

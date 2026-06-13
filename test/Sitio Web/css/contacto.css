@@ -1,0 +1,100 @@
+.Contacto {
+    display: grid; margin-top: 4px;
+    grid-template-columns: [izq] 40vh [col_1] 40vh [der];
+    grid-template-rows: [sup] 1fr [row_1] 3fr [row_2] 3fr [inf];
+    gap: 24px; justify-content: center;
+
+    .contactUs {
+        justify-items: center;
+        grid-column: izq / der;
+        grid-row: sup / row_1;
+        p {margin: 10px 0px; font: normal 16px 'Cormorant Garamond';}
+        p:first-child {color: #E590A5;}
+    }
+
+    .form {
+         justify-self: center;
+        background-color: white; grid-row: row_1 / inf;
+        justify-items: center; padding: 16px; 
+        border-radius: 40px;
+        
+        h2 {margin-bottom: 44px;}
+        form {display: flex; flex-direction: 
+            column; gap: 54px}
+
+        .group {display: flex;}
+        .group div, .one, .message 
+        {h4 {font: normal 16px 'Cormorant Garamond'; 
+            margin-bottom: 4px;}}
+        .group div, .one {
+            input {border-radius: 20px; border: 0;
+                background-color: #FFE4EB; height: 20px;}
+            input::placeholder{padding-left: 8px;
+                font-size: 12px;}
+        }
+
+        .message h4 {padding-bottom: 16px;}
+        .message textarea {
+            border-radius: 48px; border: 0; width: 90%;
+            background-color: #FFE4EB; resize: none;
+            height: 128px;
+        }
+
+        .group div input {width: 80%;}
+        .one input {width: 85%;}
+
+        button {
+            color: black; border-radius: 28px;
+            font: normal 24px 'Cormorant Garamond'; 
+            background-color: #D85B7B;
+        }
+    }
+
+    .info {
+        background-color: white; border-radius: 36px;
+        padding: 8% 8%;
+        h2 {color: black; font: 24px 'Cormorant Garamond';}
+        ul {
+            display: flex; flex-direction: column;
+            gap: 24px;  margin-top: 8%;
+            li {display: flex; gap: 12px; color: #525252;
+                align-items: center; font: 18px 'Cormorant Garamond';}
+        }
+    }
+
+    .more {
+        align-content: flex-end;
+        .followUs, .location {width: 100%;padding: 18px;
+            background-color:#FFE4EB; margin-top: 48px;
+            justify-items: center;}
+
+        .followUs {
+            border-radius: 28px;
+            h2 {color: black; font: 24px 'Cormorant Garamond'; 
+                padding-bottom: 24px;}
+            ul {
+                display: flex; gap: 24px;
+                li {display: flex; gap: 8px;
+                    align-items: center;}
+            }
+        }
+        
+        .location {
+            border-radius: 36px;
+            display: flex; flex-direction: column;
+            align-items: center; gap: 32px;
+            p {font: 28px 'Cormorant Garamond'}
+            .icon {width: 32px;}
+        }
+
+        .icon {width: 18px;}
+    }
+
+    /*Otros*/
+    .icon {width: 24px;}
+    .contactUs h2, .form h2 
+    {color: black; font: 32px 'Cormorant Garamond';}
+}
+
+
+
