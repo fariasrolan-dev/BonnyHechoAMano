@@ -1,0 +1,130 @@
+.hero-categoria {
+  background: linear-gradient(to bottom, #efe5d8, #f5f0e8);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-categoria h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #6b5b4d;
+}
+
+.hero-categoria p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.hero-categoria .imagen {
+  margin-top: 30px;
+}
+
+.hero-categoria .imagen img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+}
+
+.subnav-categorias {
+  text-align: center;
+  padding: 20px;
+}
+
+.subnav-categorias a {
+  text-decoration: none;
+  background: #dccbb8;
+  color: #5c5045;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.seccion-productos {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.seccion-productos h2 {
+  margin-bottom: 15px;
+  color: #6b5b4d;
+}
+
+.grid-productos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.producto-card {
+  background: white;
+  width: 260px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.producto-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.producto-card h3 {
+  margin-top: 15px;
+}
+
+.descripcion {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.precio {
+  margin-top: 10px;
+  font-size: 22px;
+  color: #8b7355;
+}
+
+.boton-card {
+  display: inline-block;
+  text-decoration: none;
+  background: #cbb89d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .hero-categoria h1 {
+    font-size: 30px;
+  }
+}
+
+body{
+    font-family:'Open Sans', sans-serif;
+}
+
+h1, h2{
+    font-family:'Playfair Display', serif;
+}
+
+h3, nav a{
+    font-family:'Roboto', sans-serif;
+}
+
+label, input, textarea, button, p{
+    font-family:'Inter', sans-serif;
+}
+
+.brand-name{
+    font-family:'Rouge Script', cursive;
+    font-size:34px;
+    color:#5C5045;
+    display:block;
+    margin-top:6px;
+    line-height:1;
+}

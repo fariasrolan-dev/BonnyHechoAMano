@@ -1,0 +1,62 @@
+.contacto{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.contacto-texto img{
+    max-width:350px;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.formulario{
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:25px;
+    border-radius:15px;
+    margin-top:30px;
+}
+
+.formulario label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+.formulario input,
+.formulario textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.formulario textarea{
+    height:120px;
+}
+
+body{
+    font-family:'Open Sans', sans-serif;
+}
+
+h1, h2{
+    font-family:'Playfair Display', serif;
+}
+
+h3, nav a{
+    font-family:'Roboto', sans-serif;
+}
+
+label, input, textarea, button, p{
+    font-family:'Inter', sans-serif;
+}
+
+.brand-name{
+    font-family:'Rouge Script', cursive;
+    font-size:34px;
+    color:#5C5045;
+    display:block;
+    margin-top:6px;
+    line-height:1;
+}

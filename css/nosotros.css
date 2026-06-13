@@ -1,0 +1,60 @@
+.nosotros{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.nosotros-imagen img{
+    max-width:400px;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.informacion{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:30px;
+}
+
+.info-box{
+    background:white;
+    width:280px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.video{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.video video{
+    width:80%;
+    border-radius:20px;
+}
+
+body{
+    font-family:'Open Sans', sans-serif;
+}
+
+h1, h2{
+    font-family:'Playfair Display', serif;
+}
+
+h3, nav a{
+    font-family:'Roboto', sans-serif;
+}
+
+label, input, textarea, button, p{
+    font-family:'Inter', sans-serif;
+}
+
+.brand-name{
+    font-family:'Rouge Script', cursive;
+    font-size:34px;
+    color:#5C5045;
+    display:block;
+    margin-top:6px;
+    line-height:1;
+}
