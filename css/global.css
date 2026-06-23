@@ -31,6 +31,16 @@ nav a{
     font-weight:bold;
 }
 
+/* BOTÓN HAMBURGUESA - oculto en pantalla grande */
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:1.5rem;
+    cursor:pointer;
+    color:#5C5045;
+}
+
 img{
     width:100%;
 }
@@ -66,6 +76,21 @@ footer{
 
 @media(max-width:768px){
 
+    /* Menú hamburguesa en móvil */
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+    }
+
+    nav.activo{
+        display:flex;
+        flex-direction:column;
+    }
+
+    /* Links del nav en columna */
     nav a{
         display:block;
         margin:15px 0;
