@@ -1,60 +1,174 @@
-.nosotros{
-    padding:40px 20px;
-    text-align:center;
+/* =============================================
+   NOSOTROS - FLEXBOX
+   ============================================= */
+
+.nosotros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  padding: 80px 60px;
 }
 
-.nosotros-imagen img{
-    max-width:400px;
-    border-radius:20px;
-    margin-top:20px;
+.nosotros-texto {
+  width: 50%;
 }
 
-.informacion{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    padding:30px;
+.nosotros-texto h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
-.info-box{
-    background:white;
-    width:280px;
-    padding:20px;
-    border-radius:15px;
+.nosotros-texto p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: var(--gris);
+  font-size: 16px;
 }
 
-.video{
-    padding:40px 20px;
-    text-align:center;
+.nosotros-imagen {
+  width: 40%;
 }
 
-.video video{
-    width:80%;
-    border-radius:20px;
+.nosotros-imagen img {
+  border-radius: 25px;
+  box-shadow: var(--sombra);
+  transition: transform var(--transicion);
 }
 
-body{
-    font-family:'Open Sans', sans-serif;
+.nosotros-imagen img:hover {
+  transform: scale(1.02);
 }
 
-h1, h2{
-    font-family:'Playfair Display', serif;
+/* =============================================
+   MISION Y VISION - GRID LAYOUT
+   ============================================= */
+
+.informacion {
+  padding: 60px;
+  background: var(--blanco);
 }
 
-h3, nav a{
-    font-family:'Roboto', sans-serif;
+.informacion h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-label, input, textarea, button, p{
-    font-family:'Inter', sans-serif;
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
-.brand-name{
-    font-family:'Rouge Script', cursive;
-    font-size:34px;
-    color:#5C5045;
-    display:block;
-    margin-top:6px;
-    line-height:1;
+.info-box {
+  background: var(--fondo);
+  padding: 35px 30px;
+  border-radius: 20px;
+  text-align: center;
+  border-top: 4px solid var(--rosa);
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.info-box:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra);
+}
+
+.info-box i {
+  font-size: 36px;
+  color: var(--rosa-oscuro);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.info-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: var(--texto);
+}
+
+.info-box p {
+  color: var(--gris);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* =============================================
+   VIDEO
+   ============================================= */
+
+.video {
+  padding: 80px 60px;
+  text-align: center;
+}
+
+.video h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.video video {
+  width: 75%;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .nosotros {
+    padding: 60px 30px;
+  }
+
+  .informacion {
+    padding: 50px 30px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nosotros {
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .nosotros-texto {
+    width: 100%;
+  }
+
+  .nosotros-imagen {
+    width: 100%;
+  }
+
+  .nosotros-texto h1 {
+    font-size: 34px;
+  }
+
+  .informacion {
+    padding: 40px 20px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video {
+    padding: 50px 20px;
+  }
+
+  .video video {
+    width: 100%;
+  }
 }

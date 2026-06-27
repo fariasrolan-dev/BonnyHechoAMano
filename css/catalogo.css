@@ -1,61 +1,171 @@
-.titulo-pagina{
-    text-align:center;
-    padding:40px 20px;
+/* =============================================
+   TITULO
+   ============================================= */
+
+.titulo-pagina {
+  text-align: center;
+  padding: 80px 20px 60px;
 }
 
-.productos{
-    padding:30px;
+.titulo-pagina h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 15px;
 }
 
-.contenedor-productos{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+.titulo-pagina p {
+  font-size: 17px;
+  color: var(--gris);
 }
 
-.tabla-productos{
-    padding:40px 20px;
+.titulo-pagina .linea {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rosa), var(--azul));
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
+/* =============================================
+   PRODUCTOS - GRID LAYOUT
+   ============================================= */
+
+.productos {
+  padding: 20px 60px 80px;
 }
 
-th{
-    background:#CBB89D;
-    color:white;
+.contenedor-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
 }
 
-th, td{
-    border:1px solid #ddd;
-    padding:12px;
-    text-align:center;
+/* Boton dentro de card */
+.card button {
+  margin-top: 15px;
 }
 
-body{
-    font-family:'Open Sans', sans-serif;
+/* =============================================
+   TABLA
+   ============================================= */
+
+.tabla-productos {
+  padding: 60px;
+  background: var(--blanco);
 }
 
-h1, h2{
-    font-family:'Playfair Display', serif;
+.tabla-productos h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 35px;
 }
 
-h3, nav a{
-    font-family:'Roboto', sans-serif;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
 }
 
-label, input, textarea, button, p{
-    font-family:'Inter', sans-serif;
+th {
+  background: linear-gradient(90deg, var(--rosa), var(--azul));
+  color: var(--blanco);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.brand-name{
-    font-family:'Rouge Script', cursive;
-    font-size:34px;
-    color:#5C5045;
-    display:block;
-    margin-top:6px;
-    line-height:1;
+th, td {
+  border: 1px solid rgba(208, 196, 223, 0.35);
+  padding: 16px 20px;
+  text-align: center;
+}
+
+/* Filas alternas */
+tr:nth-child(even) td {
+  background: var(--rosa-claro);
+}
+
+tr:hover td {
+  background: rgba(208, 196, 223, 0.22);
+  transition: background var(--transicion);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .contenedor-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .productos {
+    padding: 20px 30px 60px;
+  }
+
+  .tabla-productos {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo-pagina h1 {
+    font-size: 34px;
+  }
+
+  .productos {
+    padding: 20px;
+  }
+
+  .contenedor-productos {
+    grid-template-columns: 1fr;
+  }
+
+  .tabla-productos {
+    padding: 30px 15px;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 500px;
+  }
+}
+
+
+/* =============================================
+   ACCESOS A CATEGORIAS
+   ============================================= */
+
+.categorias-acceso {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 60px 50px;
+}
+
+.categorias-acceso a {
+  text-decoration: none;
+  background: var(--blanco);
+  color: var(--texto);
+  padding: 10px 16px;
+  border-radius: 999px;
+  box-shadow: var(--sombra);
+  border: 1px solid rgba(208, 196, 223, 0.45);
+  font-size: 14px;
+  transition: transform var(--transicion), background var(--transicion);
+}
+
+.categorias-acceso a:hover {
+  transform: translateY(-2px);
+  background: rgba(183, 214, 246, 0.25);
+}
+@media (max-width: 768px) {
+  .categorias-acceso {
+    padding: 0 20px 30px;
+  }
 }

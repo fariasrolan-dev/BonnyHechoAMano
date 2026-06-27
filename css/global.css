@@ -1,124 +1,310 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =============================================
+   GOOGLE FONTS
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* =============================================
+   VARIABLES CSS
+   ============================================= */
+
+:root {
+  --rosa:        #D0C4DF;
+  --rosa-oscuro: #ACA69A;
+  --rosa-claro:  #EAF4FD;
+  --fondo:       #FBFAF8;
+  --blanco:      #FFFFFF;
+  --gris:        #6F6A72;
+  --texto:       #3D3944;
+  --verde:       #C1E2A2;
+  --azul:        #B7D6F6;
+  --vainilla:    #D0D693;
+  --sombra:      0 8px 25px rgba(173, 166, 154, 0.14);
+  --radio:       18px;
+  --transicion:  0.3s ease;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#F5F0E8;
-    color:#5C5045;
+/* =============================================
+   RESET
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    background:linear-gradient(to right, #E8DCCB, #DCCBB8);
-    padding:20px;
-    text-align:center;
+/* =============================================
+   BODY
+   ============================================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
-.logo img{
-    width:90px;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
 }
 
-nav{
-    margin-top:15px;
+main {
+  overflow-x: hidden;
 }
 
-nav a{
-    text-decoration:none;
-    color:#5C5045;
-    margin:10px;
-    font-weight:bold;
+/* =============================================
+   IMAGENES
+   ============================================= */
+
+img {
+  width: 100%;
+  display: block;
 }
 
-/* BOTÓN HAMBURGUESA - oculto en pantalla grande */
-.menu-toggle{
-    display:none;
-    background:none;
-    border:none;
-    font-size:1.5rem;
-    cursor:pointer;
-    color:#5C5045;
+/* =============================================
+   HEADER
+   ============================================= */
+
+header {
+  background: var(--blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-img{
-    width:100%;
+/* =============================================
+   LOGO
+   ============================================= */
+
+.logo img {
+  width: 70px;
+  transition: transform var(--transicion);
 }
 
-button{
-    background:#CBB89D;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:8px;
+.logo img:hover {
+  transform: scale(1.08);
 }
 
-.card{
-    background:white;
+/* =============================================
+   NAV
+   ============================================= */
+
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+  position: relative;
+  transition: color var(--transicion);
+}
+
+/* Subrayado animado */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rosa), var(--azul), var(--verde));
+  transition: width var(--transicion);
+}
+
+nav a:hover {
+  color: var(--rosa-oscuro);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Página activa */
+nav a.activo {
+  color: var(--rosa-oscuro);
+}
+
+nav a.activo::after {
+  width: 100%;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+footer {
+  background: linear-gradient(90deg, var(--rosa), var(--azul));
+  color: var(--texto);
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
+footer p {
+  opacity: 0.95;
+}
+
+/* =============================================
+   CARDS
+   ============================================= */
+
+.card {
     width:260px;
-    padding:15px;
-    border-radius:15px;
-    text-align:center;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    padding-bottom:20px;
 }
 
-.card img{
-    height:320px;
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(172, 166, 154, 0.22);
+}
+
+.card img {
+    width:100%;
+    height:340px;
     object-fit:cover;
-    border-radius:10px;
 }
 
-footer{
-    background:#DCCBB8;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+.card h3 {
+  margin-top: 15px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  padding: 0 15px;
 }
 
-@media(max-width:768px){
-
-    /* Menú hamburguesa en móvil */
-    .menu-toggle{
-        display:block;
-    }
-
-    nav{
-        display:none;
-    }
-
-    nav.activo{
-        display:flex;
-        flex-direction:column;
-    }
-
-    /* Links del nav en columna */
-    nav a{
-        display:block;
-        margin:15px 0;
-    }
-
+.card p {
+  color: var(--rosa-oscuro);
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
 }
 
-body{
-    font-family:'Open Sans', sans-serif;
+/* =============================================
+   BOTONES
+   ============================================= */
+
+button {
+  background: linear-gradient(90deg, var(--rosa), var(--azul));
+  color: var(--texto);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: background var(--transicion), transform var(--transicion), box-shadow var(--transicion);
 }
 
-h1, h2{
-    font-family:'Playfair Display', serif;
+button:hover {
+  background: linear-gradient(90deg, var(--rosa-oscuro), var(--vainilla));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(172, 166, 154, 0.3);
 }
 
-h3, nav a{
-    font-family:'Roboto', sans-serif;
+button:active {
+  transform: translateY(0);
 }
 
-label, input, textarea, button, p{
-    font-family:'Inter', sans-serif;
+/* =============================================
+   ANIMACION ENTRADA (fade-up)
+   ============================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.brand-name{
-    font-family:'Rouge Script', cursive;
-    font-size:34px;
-    color:#5C5045;
-    display:block;
-    margin-top:6px;
-    line-height:1;
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+.fade-up-delay-1 { animation-delay: 0.1s; }
+.fade-up-delay-2 { animation-delay: 0.2s; }
+.fade-up-delay-3 { animation-delay: 0.3s; }
+.fade-up-delay-4 { animation-delay: 0.4s; }
+
+/* =============================================
+   TITULOS DE SECCION
+   ============================================= */
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.titulo-seccion h1,
+.titulo-seccion h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--texto);
+  margin-bottom: 12px;
+}
+
+.titulo-seccion p {
+  color: var(--gris);
+  font-size: 16px;
+}
+
+.titulo-seccion .linea {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rosa), var(--azul), var(--verde));
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  header {
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  .titulo-seccion h1,
+  .titulo-seccion h2 {
+    font-size: 30px;
+  }
 }
