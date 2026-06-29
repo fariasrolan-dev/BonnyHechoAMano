@@ -1,161 +1,69 @@
-/* =============================================
-   TITULO
-   ============================================= */
-
-.titulo {
-  text-align: center;
-  padding: 80px 20px 60px;
+.titulo{
+    text-align:center;
+    padding:40px 20px;
 }
 
-.titulo h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  margin-bottom: 15px;
+.promociones{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:30px;
 }
 
-.titulo p {
-  color: var(--gris);
-  font-size: 17px;
+.promo-card{
+    background:white;
+    width:280px;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
 }
 
-.titulo .linea {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--rosa), var(--azul));
-  margin: 15px auto 0;
-  border-radius: 2px;
+.promo-card img{
+    height:320px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
-/* Animacion titulo */
-.titulo h1,
-.titulo p {
-  animation: fadeUp 0.6s ease both;
+.descuento{
+    background:#CBB89D;
+    color:white;
+    padding:8px;
+    border-radius:8px;
+    margin-bottom:10px;
 }
 
-.titulo p {
-  animation-delay: 0.15s;
+.precio-anterior{
+    text-decoration:line-through;
+    color:gray;
 }
 
-/* =============================================
-   PROMOCIONES - GRID LAYOUT
-   ============================================= */
-
-.promociones {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 20px 60px 80px;
+.precio{
+    font-size:24px;
+    margin-top:10px;
 }
 
-/* =============================================
-   CARD PROMO
-   ============================================= */
-
-.promo-card {
-  background: var(--blanco);
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  position: relative;
-  box-shadow: var(--sombra);
-  transition: transform var(--transicion), box-shadow var(--transicion);
-
-  /* Animacion entrada escalonada */
-  animation: fadeUp 0.5s ease both;
+body{
+    font-family:'Open Sans', sans-serif;
 }
 
-.promo-card:nth-child(1) { animation-delay: 0.1s; }
-.promo-card:nth-child(2) { animation-delay: 0.2s; }
-.promo-card:nth-child(3) { animation-delay: 0.3s; }
-
-.promo-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 16px 40px rgba(173, 166, 154, 0.20);
+h1, h2{
+    font-family:'Playfair Display', serif;
 }
 
-/* Imagen */
-.promo-card img {
-  height: 240px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: transform var(--transicion);
+h3, nav a{
+    font-family:'Roboto', sans-serif;
 }
 
-.promo-card:hover img {
-  transform: scale(1.04);
+label, input, textarea, button, p{
+    font-family:'Inter', sans-serif;
 }
 
-/* Badge descuento */
-.descuento {
-  background: linear-gradient(90deg, var(--rosa), var(--azul));
-  color: var(--blanco);
-  padding: 8px 14px;
-  border-radius: 30px;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(173, 166, 154, 0.25);
-
-  /* Animacion pulso */
-  animation: pulso 2s ease-in-out infinite;
-}
-
-@keyframes pulso {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.08); }
-}
-
-/* Nombre producto */
-.promo-card h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-top: 18px;
-  margin-bottom: 5px;
-}
-
-/* Precio anterior */
-.precio-anterior {
-  text-decoration: line-through;
-  color: var(--gris);
-  margin-top: 12px;
-  font-size: 15px;
-}
-
-/* Precio actual */
-.precio {
-  color: var(--rosa);
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 6px;
-}
-
-/* Boton */
-.promo-card button {
-  margin-top: 18px;
-  width: 100%;
-}
-
-/* =============================================
-   RESPONSIVE
-   ============================================= */
-
-@media (max-width: 1024px) {
-  .promociones {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 20px 30px 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .titulo h1 {
-    font-size: 34px;
-  }
-
-  .promociones {
-    grid-template-columns: 1fr;
-    padding: 20px 20px 50px;
-  }
+.brand-name{
+    font-family:'Rouge Script', cursive;
+    font-size:34px;
+    color:#5C5045;
+    display:block;
+    margin-top:6px;
+    line-height:1;
 }
