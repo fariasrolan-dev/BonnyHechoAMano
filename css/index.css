@@ -1,71 +1,166 @@
-.hero{
-    background:linear-gradient(to bottom, #EFE5D8, #F5F0E8);
-    padding:40px 20px;
-    text-align:center;
+/* =============================================
+   HERO - FLEXBOX
+   ============================================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 60px;
+  background: linear-gradient(135deg, rgba(232, 220, 203, 0.80) 0%, rgba(245, 240, 232, 0.90) 55%, rgba(203, 184, 157, 0.28) 100%);
+  overflow: hidden;
 }
 
-.hero-texto h1{
-    font-size:40px;
-    margin-bottom:20px;
+.hero-texto {
+  width: 50%;
+  animation: fadeUp 0.7s ease both;
 }
 
-.hero-texto p{
-    margin-bottom:20px;
+.hero-texto h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 54px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--texto);
 }
 
-.hero-imagen{
-    margin-top:20px;
+.hero-texto h1 span {
+  color: var(--rosa);
 }
 
-.hero-imagen img{
-    max-width:400px;
-    border-radius:20px;
+.hero-texto p {
+  margin-bottom: 30px;
+  line-height: 1.7;
+  font-size: 17px;
+  color: var(--gris);
 }
 
-.productos{
-    padding:40px 20px;
-    text-align:center;
+.hero-imagen {
+  width: 42%;
+  animation: fadeUp 0.7s ease 0.2s both;
 }
 
-.contenedor-productos{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+.hero-imagen img {
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(173, 166, 154, 0.18);
+  transition: transform 0.5s ease;
 }
 
-.nosotros{
-    padding:40px 20px;
-    text-align:center;
+.hero-imagen img:hover {
+  transform: scale(1.03);
 }
 
-.nosotros-imagen img{
-    max-width:400px;
-    border-radius:20px;
-    margin-top:20px;
+/* =============================================
+   PRODUCTOS DESTACADOS - GRID LAYOUT
+   ============================================= */
+
+.productos {
+  padding: 80px 60px;
 }
 
-body{
-    font-family:'Open Sans', sans-serif;
+.contenedor-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  gap: 30px;
+  justify-content: center;
+  justify-items: center;
 }
 
-h1, h2{
-    font-family:'Playfair Display', serif;
+.contenedor-productos .card {
+  width: 100%;
+  justify-self: center;
 }
 
-h3, nav a{
-    font-family:'Roboto', sans-serif;
+/* =============================================
+   NOSOTROS - FLEXBOX
+   ============================================= */
+
+.nosotros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 80px 60px;
+  background: var(--blanco);
 }
 
-label, input, textarea, button, p{
-    font-family:'Inter', sans-serif;
+.nosotros-texto {
+  width: 50%;
 }
 
-.brand-name{
-    font-family:'Rouge Script', cursive;
-    font-size:34px;
-    color:#5C5045;
-    display:block;
-    margin-top:6px;
-    line-height:1;
+.nosotros-texto h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.nosotros-texto p {
+  line-height: 1.8;
+  color: var(--gris);
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.nosotros-imagen {
+  width: 40%;
+}
+
+.nosotros-imagen img {
+  border-radius: 25px;  
+  box-shadow: 0 15px 40px rgba(173, 166, 154, 0.15);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .contenedor-productos {
+    grid-template-columns: repeat(2, minmax(220px, 260px));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .hero-texto {
+    width: 100%;
+  }
+
+  .hero-imagen {
+    width: 100%;
+  }
+
+  .hero-texto h1 {
+    font-size: 36px;
+  }
+
+  .productos {
+    padding: 50px 20px;
+  }
+
+  .contenedor-productos {
+    grid-template-columns: minmax(0, 340px);
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .nosotros {
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .nosotros-texto {
+    width: 100%;
+  }
+
+  .nosotros-imagen {
+    width: 100%;
+  }
 }
