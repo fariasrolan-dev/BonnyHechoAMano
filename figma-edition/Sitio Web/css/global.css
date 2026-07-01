@@ -15,6 +15,12 @@ body{
     color:#5C5045;
 }
 
+h3 {margin-left: 24px; color: #D85B7B; 
+    font: normal 24px 'Cormorant Garamond';}
+h2 {color: #000; font: normal 44px 'Cormorant Garamond';
+    span {color: #AD4962;}}
+h2, h3, ul {margin: 16px;}
+
 /* HEADER */
 
 header{

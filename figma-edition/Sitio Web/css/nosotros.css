@@ -26,8 +26,6 @@
             img { width: 132px; height: 100%;
                 border-radius: 20px;}
         }
-
-        h2, h3, ul {margin: 16px;}
     }
 
     .valuables {
@@ -48,15 +46,7 @@
                     text-align: center;}
             }
         }
-
-        h2, h3, ul {margin: 16px;}
     }
 
-    .history, .work, .valuables {
-        padding: 4% 2%;
-        h3 {margin-left: 24px; color: #D85B7B; 
-            font: normal 24px 'Cormorant Garamond';}
-        h2 {color: #000; font: normal 44px 'Cormorant Garamond';
-            span {color: #AD4962;}}
-    }
+    .history, .work, .valuables {padding: 4% 2%;}
 }

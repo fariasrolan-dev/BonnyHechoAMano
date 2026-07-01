@@ -25,28 +25,27 @@
 
     .advertising {
         margin: 32px; background-color: #FFE4EB;
-        display: grid; border-radius: 32px;
-        grid-template-columns: [izq] 20vh [h_center] 10vh [der];
-        grid-template-rows: [sup] 1rem [v_center] 1fr [inf];
-
+        display: grid; border-radius: 28px;
+        grid-template-columns: [izq] 128px [h_center] 1fr [der];
+        grid-template-rows: [sup] 64px [v_center] 32px [inf];
         div {margin: 0; border-radius: 0;}
 
         .icon {
-            background-color: green;
             grid-row: sup / inf;
             display: flex; justify-content: center;
             align-items: center;
-
-            img {width: 24%; background-color: white;}
+            img {width: 48%; background-color: #D85B7B;
+                border-radius: 12px; padding: 8px;}
         }
 
         .t1 {
-            width: 100%;
-            background-color: aliceblue;
+            display: flex; align-self: end;
+            margin-bottom: 12px; font-size: 1.5rem;
+            color: black;
         }
 
         .t2 {
-
+            color: black;
         }
     }
 }
