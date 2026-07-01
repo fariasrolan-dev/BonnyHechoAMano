@@ -16,7 +16,7 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/global.css?v=2" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
 
@@ -27,9 +27,23 @@
         <img src="media/imagenes/bonny_logo.png" alt="Logo de Bonny" />
       </div>
 
-      <nav>
+      <!-- Boton que abre y cierra el menu cuando la pantalla es pequena -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu de navegacion"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="menu-principal">
         <a href="index.html">Inicio</a>
         <a href="catalogo.html">Catálogo</a>
+        <a href="precios.html">Precios</a>
         <a href="promociones.html">Promociones</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -52,7 +66,7 @@
 
       <div class="hero-imagen fade-up fade-up-delay-2">
         <img
-          src="media/imagenes/PERSONALIZADOS/473762484_122200946510191318_4327876996282670557_n.jpg"
+          src="media/imagenes/PERSONALIZADOS/Abejitas Maya.jpg"
           alt="Ramo artesanal de Bonny"
         />
       </div>
@@ -70,29 +84,47 @@
       <div class="contenedor-productos">
         <div class="card fade-up fade-up-delay-1">
           <img
-            src="media/imagenes/RAMOS FLORES/003.jpg"
+            src="media/imagenes/RAMOS FLORES/Ramo CR7.jpg"
             alt="Ramo artesanal"
           />
           <h3>Ramo artesanal</h3>
-          <p>S/ 60</p>
+          <p>S/ 75.00</p>
         </div>
 
         <div class="card fade-up fade-up-delay-2">
           <img
-            src="media/imagenes/AMIGURUMIS/SaveClip.App_654029690_18061920074356307_265946260515821058_n.jpg"
+            src="media/imagenes/AMIGURUMIS/Capibara.jpg"
             alt="Amigurumi tejido"
           />
           <h3>Amigurumi</h3>
-          <p>S/ 45</p>
+          <p>S/ 55.00</p>
         </div>
 
         <div class="card fade-up fade-up-delay-3">
           <img
-            src="media/imagenes/VIRGENES/SaveClip.App_629930562_18313730359254881_1344096266388267775_n.jpg"
+            src="media/imagenes/PERSONALIZADOS/Personalizado Policia.jpg"
             alt="Regalo personalizado"
           />
           <h3>Personalizado</h3>
-          <p>S/ 80</p>
+          <p>S/ 75.00</p>
+        </div>
+
+        <div class="card fade-up fade-up-delay-4">
+          <img
+            src="media/imagenes/LLAVEROS/Llavero Koala.jpg"
+            alt="Llavero artesanal"
+          />
+          <h3>Llavero tejido</h3>
+          <p>S/ 18.00</p>
+        </div>
+
+        <div class="card fade-up fade-up-delay-5">
+          <img
+            src="media/imagenes/VIRGENES/Virgen Maria.jpg"
+            alt="Virgen tejida"
+          />
+          <h3>Virgen tejida</h3>
+          <p>S/ 50.00</p>
         </div>
       </div>
     </section>
@@ -116,7 +148,7 @@
 
       <div class="nosotros-imagen fade-up fade-up-delay-2">
         <img
-          src="media/imagenes/AMIGURUMIS/002.jpg"
+          src="media/imagenes/AMIGURUMIS/Capibara.jpg"
           alt="Trabajo artesanal de Bonny"
         />
       </div>
@@ -129,5 +161,10 @@
         &copy; 2026 Bonny &mdash; Todos los derechos reservados
       </p>
     </footer>
+
+    <script src="js/menu.js?v=2" defer></script>
+    <script src="js/validaciones.js" defer></script>
+    <script src="js/funcionalidades.js?v=5" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

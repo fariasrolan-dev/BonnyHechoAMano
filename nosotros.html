@@ -27,9 +27,23 @@
         <img src="media/imagenes/bonny_logo.png" alt="Logo de Bonny" />
       </div>
 
-      <nav>
+      <!-- Boton que abre y cierra el menu cuando la pantalla es pequena -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu de navegacion"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="menu-principal">
         <a href="index.html">Inicio</a>
         <a href="catalogo.html">Catálogo</a>
+        <a href="precios.html">Precios</a>
         <a href="promociones.html">Promociones</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -95,16 +109,6 @@
       </div>
     </section>
 
-    <!-- VIDEO -->
-    <section class="video">
-      <h2>Nuestro trabajo</h2>
-
-      <video controls>
-        <source src="media/video/video1.mp4" type="video/mp4" />
-        Tu navegador no soporta la reproducción de video.
-      </video>
-    </section>
-
     <!-- FOOTER -->
     <footer>
       <p>
@@ -112,5 +116,10 @@
         &copy; 2026 Bonny &mdash; Todos los derechos reservados
       </p>
     </footer>
+
+    <script src="js/menu.js?v=2" defer></script>
+    <script src="js/validaciones.js" defer></script>
+    <script src="js/funcionalidades.js?v=5" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

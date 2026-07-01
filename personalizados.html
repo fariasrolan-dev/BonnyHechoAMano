@@ -9,8 +9,8 @@
     />
     <title>Regalos personalizados | Bonny</title>
 
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/categorias.css" />
+    <link rel="stylesheet" href="css/global.css?v=2" />
+    <link rel="stylesheet" href="css/categorias.css?v=3" />
   </head>
 
   <body class="page-personalizados">
@@ -20,9 +20,23 @@
         <img src="media/imagenes/bonny_logo.png" alt="Logo de Bonny" />
       </div>
 
-      <nav>
+      <!-- Boton que abre y cierra el menu cuando la pantalla es pequena -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu de navegacion"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="menu-principal">
         <a href="index.html">Inicio</a>
         <a href="catalogo.html">Catálogo</a>
+        <a href="precios.html">Precios</a>
         <a href="promociones.html">Promociones</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -56,7 +70,7 @@
 
       <div class="imagen fade-up fade-up-delay-2">
         <img
-          src="media/imagenes/PERSONALIZADOS/473762484_122200946510191318_4327876996282670557_n.jpg"
+          src="media/imagenes/PERSONALIZADOS/Abejitas Maya.jpg"
           alt="Regalos personalizados"
         />
       </div>
@@ -71,119 +85,32 @@
       </p>
       <div class="linea"></div>
 
-      <div class="grid-productos">
-        <article class="producto-card fade-up">
-          <img
-            src="media/imagenes/PERSONALIZADOS/473762484_122200946510191318_4327876996282670557_n.jpg"
-            alt="Caja personalizada"
-          />
-          <div class="contenido">
-            <span class="tag">Personalizado</span>
-            <h3>Abejitas Maya</h3>
-            <p class="descripcion">
-              Abejitas mayas tejidas con atención a los detalles y colores característicos. No incluye caja de embalaje. Si incluye tarjeta de dedicación y foto tipo polaroid.
-            </p>
-            <div class="fila">
-              <span class="precio">S/ 150</span>
-              <a class="boton-card" href="contacto.html">Consultar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="producto-card fade-up">
-          <img
-            src="media/imagenes/PERSONALIZADOS/481290789_122207817842191318_451913562726090238_n.jpg"
-            alt="Regalo con nombre"
-          />
-          <div class="contenido">
-            <span class="tag">Personalizado</span>
-            <h3>Policia</h3>
-            <p class="descripcion">
-              Policia personalizado para sorprender a tus seres queridos con un toque único. Incluye caja de embalaje, tarjeta de dedicación y foto tipo polaroid.
-            </p>
-            <div class="fila">
-              <span class="precio">S/ 70</span>
-              <a class="boton-card" href="contacto.html">Consultar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="producto-card fade-up">
-          <img
-            src="media/imagenes/PERSONALIZADOS/480790987_122208017702191318_1298419642394412766_n.jpg"
-            alt="Regalo temático"
-          />
-          <div class="contenido">
-            <span class="tag">Personalizado</span>
-            <h3>Obstetra</h3>
-            <p class="descripcion">
-              Obstetra personalizado para sorprender a tus seres queridos con un toque único. Incluye caja de embalaje, tarjeta de dedicación y foto tipo polaroid.
-            </p>
-            <div class="fila">
-              <span class="precio">S/ 90</span>
-              <a class="boton-card" href="contacto.html">Consultar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="producto-card fade-up">
-          <img
-            src="media/imagenes/PERSONALIZADOS/499270951_122224379480191318_2192919310662863659_n.jpg"
-            alt="Combo especial"
-          />
-          <div class="contenido">
-            <span class="tag">Personalizado</span>
-            <h3>Detalle especial</h3>
-            <p class="descripcion">
-              Una opción completa para celebraciones importantes.
-            </p>
-            <div class="fila">
-              <span class="precio">S/ 130</span>
-              <a class="boton-card" href="contacto.html">Consultar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="producto-card fade-up">
-          <img
-            src="media/imagenes/PERSONALIZADOS/480817412_122207817632191318_1924559077957770385_n.jpg"
-            alt="Pack aniversario"
-          />
-          <div class="contenido">
-            <span class="tag">Personalizado</span>
-            <h3>Geisha personalizada</h3>
-            <p class="descripcion">
-              Geisha personalizada a medida para sorprender a tus seres queridos con un toque único.
-            </p>
-            <div class="fila">
-              <span class="precio">S/ 120</span>
-              <a class="boton-card" href="contacto.html">Consultar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="producto-card fade-up">
-          <img
-            src="media/imagenes/PERSONALIZADOS/481238157_122207817284191318_1963929908665752341_n.jpg"
-            alt="Regalo premium"
-          />
-          <div class="contenido">
-            <span class="tag">Personalizado</span>
-            <h3>Amigurumi Personalizado</h3>
-            <p class="descripcion">
-              Amigurumi personalizado a medida para sorprender a tus seres queridos con un toque único.
-            </p>
-            <div class="fila">
-              <span class="precio">S/ 70</span>
-              <a class="boton-card" href="contacto.html">Consultar</a>
-            </div>
-          </div>
-        </article>
+      <!-- Buscador que filtra los modelos sin cambiar de pagina -->
+      <div class="buscador-seccion">
+        <label for="buscador-productos">Buscar modelo</label>
+        <input
+          class="buscador-productos"
+          id="buscador-productos"
+          type="search"
+          placeholder="Buscar personalizado"
+          data-contenedor=".grid-productos"
+          data-tarjetas=".producto-card"
+        />
+        <p class="sin-resultados" hidden>No se encontraron modelos.</p>
       </div>
+
+      <div class="grid-productos" data-catalogo data-tipo="categoria" data-categoria="personalizados"></div>
     </section>
 
     <footer>
       <p>&copy; 2026 Bonny &mdash; Todos los derechos reservados</p>
     </footer>
+
+    <script src="js/catalogo-data.js?v=2" defer></script>
+    <script src="js/catalogo-render.js?v=6" defer></script>
+    <script src="js/menu.js?v=2" defer></script>
+    <script src="js/validaciones.js" defer></script>
+    <script src="js/funcionalidades.js?v=5" defer></script>
+    <script src="js/main.js?v=2" defer></script>
   </body>
 </html>

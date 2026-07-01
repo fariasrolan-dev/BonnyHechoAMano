@@ -27,9 +27,23 @@
         <img src="media/imagenes/bonny_logo.png" alt="Logo de Bonny" />
       </div>
 
-      <nav>
+      <!-- Boton que abre y cierra el menu cuando la pantalla es pequena -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu de navegacion"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="menu-principal">
         <a href="index.html">Inicio</a>
         <a href="catalogo.html">Catálogo</a>
+        <a href="precios.html">Precios</a>
         <a href="promociones.html">Promociones</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -47,12 +61,26 @@
     </section>
 
     <!-- PROMOCIONES - GRID -->
+    <!-- Buscador que ayuda a encontrar promociones por nombre o precio -->
+    <section class="buscador-seccion">
+      <label for="buscador-productos">Buscar promocion</label>
+      <input
+        class="buscador-productos"
+        id="buscador-productos"
+        type="search"
+        placeholder="Buscar promocion"
+        data-contenedor=".promociones"
+        data-tarjetas=".promo-card"
+      />
+      <p class="sin-resultados" hidden>No se encontraron promociones.</p>
+    </section>
+
     <section class="promociones">
       <!-- CARD 1 -->
       <div class="promo-card">
         <div class="descuento">-20%</div>
         <img
-          src="media/imagenes/AMIGURUMIS/SaveClip.App_655259220_18120345229614800_5717667373593046456_n.jpg"
+          src="media/imagenes/AMIGURUMIS/Dooby.jpg"
           alt="Dooby en promoción"
         />
         <h2>Dooby</h2>
@@ -65,7 +93,7 @@
       <div class="promo-card">
         <div class="descuento">-15%</div>
         <img
-          src="media/imagenes/RAMOS FLORES/498712678_122224379612191318_9195878846840847863_n.jpg"
+          src="media/imagenes/RAMOS FLORES/Ramo Macetas.jpg"
           alt="Amigurumi tejido en promoción"
         />
         <h2>Maceta con 2 Tulipanes</h2>
@@ -78,7 +106,7 @@
       <div class="promo-card">
         <div class="descuento">-20%</div>
         <img
-          src="media/imagenes/RAMOS FLORES/005.jpg"
+          src="media/imagenes/RAMOS FLORES/Ramo Snoopy.jpg"
           alt="Regalo personalizado en promoción"
         />
         <h2>Ramo Snoopy</h2>
@@ -95,5 +123,10 @@
         &copy; 2026 Bonny &mdash; Todos los derechos reservados
       </p>
     </footer>
+
+    <script src="js/menu.js?v=2" defer></script>
+    <script src="js/validaciones.js" defer></script>
+    <script src="js/funcionalidades.js?v=5" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
