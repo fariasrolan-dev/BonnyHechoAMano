@@ -183,6 +183,45 @@ footer p {
 }
 
 /* =============================================
+   NOTAS DE COSTOS ADICIONALES
+   ============================================= */
+
+.notas-adicionales {
+  padding: 34px 20px;
+  background: rgba(255, 253, 248, 0.78);
+  border-top: 1px solid rgba(139, 115, 85, 0.12);
+}
+
+.notas-adicionales .notas-contenido {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  padding: 22px 26px;
+  background: var(--blanco);
+  border: 1px solid rgba(139, 115, 85, 0.14);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+}
+
+.notas-adicionales h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.notas-adicionales ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.notas-adicionales li {
+  color: var(--gris);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =============================================
    CARDS
    ============================================= */
 

@@ -24,6 +24,10 @@ function quitarPrefijoProducto(nombre, prefijo) {
 }
 
 function obtenerDescripcionProducto(producto) {
+  if (producto.descripcion) {
+    return producto.descripcion;
+  }
+
   const nombre = producto.nombre;
   const nombreNormalizado = nombre.toLowerCase();
 

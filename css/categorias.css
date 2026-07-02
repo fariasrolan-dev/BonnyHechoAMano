@@ -120,8 +120,9 @@ body.page-virgenes {
 }
 
 .grid-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 28px;
   align-items: stretch;
 }
@@ -134,9 +135,9 @@ body.page-virgenes {
   transition: transform var(--transicion), box-shadow var(--transicion);
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex: 0 1 340px;
+  width: min(100%, 340px);
   max-width: 340px;
-  justify-self: center;
   text-align: center;
 }
 
@@ -151,11 +152,11 @@ body.page-virgenes {
 }
 
 .producto-card .contenido {
-  padding: 18px 18px 20px;
+  padding: 16px 18px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex: 1;
 }
 
@@ -173,18 +174,19 @@ body.page-virgenes {
 .producto-card h3 {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
-  min-height: 56px;
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1.25;
 }
 
 .producto-card .descripcion {
   color: var(--gris);
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.55;
   text-align: center;
-  min-height: 96px;
+  min-height: 70px;
   display: flex;
   align-items: center;
 }
@@ -274,10 +276,6 @@ body.page-virgenes {
     height: 320px;
   }
 
-  .grid-productos {
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  }
-
   .seccion-productos {
     padding: 25px 30px 70px;
   }
@@ -304,11 +302,9 @@ body.page-virgenes {
     height: 280px;
   }
 
-  .grid-productos {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .producto-card {
+    flex-basis: min(100%, 340px);
+    width: min(100%, 340px);
     max-width: 340px;
   }
 
