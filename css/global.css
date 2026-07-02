@@ -195,7 +195,7 @@ footer p {
 .notas-adicionales .notas-contenido {
   width: min(100%, 920px);
   margin: 0 auto;
-  padding: 22px 26px;
+  padding: 24px 28px;
   background: var(--blanco);
   border: 1px solid rgba(139, 115, 85, 0.14);
   border-radius: 16px;
@@ -205,20 +205,28 @@ footer p {
 .notas-adicionales h2 {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   text-align: center;
 }
 
 .notas-adicionales ul {
   list-style: none;
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .notas-adicionales li {
   color: var(--gris);
-  line-height: 1.6;
-  text-align: center;
+  line-height: 1.55;
+  text-align: left;
+  padding: 12px 14px;
+  background: rgba(245, 240, 232, 0.62);
+  border-radius: 12px;
+}
+
+.notas-adicionales strong {
+  color: var(--texto);
+  font-weight: 600;
 }
 
 /* =============================================

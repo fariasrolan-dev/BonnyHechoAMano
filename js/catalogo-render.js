@@ -183,9 +183,14 @@ function inicializarCatalogoDesdeDatos() {
   });
 }
 
-function crearCeldaTabla(texto) {
+function crearCeldaTabla(texto, etiqueta) {
   const celda = document.createElement("td");
   celda.textContent = texto;
+
+  if (etiqueta) {
+    celda.dataset.label = etiqueta;
+  }
+
   return celda;
 }
 
@@ -199,10 +204,10 @@ function inicializarTablaPreciosDesdeDatos() {
       const fila = document.createElement("tr");
       const categoria = nombresCategoriasTabla[producto.categoria] || "Producto";
 
-      fila.appendChild(crearCeldaTabla(producto.nombre));
-      fila.appendChild(crearCeldaTabla(categoria));
-      fila.appendChild(crearCeldaTabla(obtenerPrecioVisible(producto.precio)));
-      fila.appendChild(crearCeldaTabla(obtenerTiempoEntrega(producto.categoria)));
+      fila.appendChild(crearCeldaTabla(producto.nombre, "Producto"));
+      fila.appendChild(crearCeldaTabla(categoria, "Categoria"));
+      fila.appendChild(crearCeldaTabla(obtenerPrecioVisible(producto.precio), "Precio"));
+      fila.appendChild(crearCeldaTabla(obtenerTiempoEntrega(producto.categoria), "Tiempo de entrega"));
 
       cuerpoTabla.appendChild(fila);
     });

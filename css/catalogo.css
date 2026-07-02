@@ -192,6 +192,7 @@ th, td {
   border-bottom: 1px solid rgba(139, 115, 85, 0.14);
   padding: 16px 20px;
   text-align: center;
+  vertical-align: middle;
 }
 
 tbody tr:last-child td {
@@ -228,6 +229,12 @@ tr:hover td {
   .tabla-productos {
     padding: 40px 30px;
   }
+
+  th,
+  td {
+    padding: 14px 12px;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -253,11 +260,79 @@ tr:hover td {
 
   .tabla-productos {
     padding: 30px 15px;
-    overflow-x: auto;
   }
 
   table {
-    min-width: 500px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    min-width: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+    display: grid;
+    gap: 14px;
+  }
+
+  tr {
+    display: grid;
+    gap: 0;
+    background: var(--blanco);
+    border: 1px solid rgba(139, 115, 85, 0.14);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+  }
+
+  tr:nth-child(even) td {
+    background: transparent;
+  }
+
+  tr:hover td {
+    background: transparent;
+  }
+
+  td {
+    display: grid;
+    grid-template-columns: minmax(110px, 42%) 1fr;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid rgba(139, 115, 85, 0.12);
+    padding: 13px 15px;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  td:last-child {
+    border-bottom: 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    color: var(--texto);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabla-productos {
+    padding: 25px 12px;
+  }
+
+  .tabla-productos h2 {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  td {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 12px 14px;
   }
 }
 
