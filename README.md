@@ -34,11 +34,10 @@ El sitio esta dirigido a personas que buscan regalos personalizados, decorativos
 - `js/`: funciones JavaScript externas, reutilizables y organizadas.
 - `media/`: imagenes de productos, logo e iconos SVG.
 
-## Criterios del Avance 3
+## Criterios del Proyecto
 
 - El sitio esta integrado con HTML, CSS y JavaScript.
 - El JavaScript esta en archivos externos, sin codigo inline.
-- No se usa `localStorage`, porque aun no corresponde al avance del curso.
 - El menu responsive usa manipulacion del DOM.
 - El formulario tiene validacion de campos obligatorios y mensajes de error.
 - El catalogo, los filtros, la galeria modal y la tabla de precios agregan interactividad significativa.
