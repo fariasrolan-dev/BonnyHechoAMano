@@ -209,6 +209,15 @@ tr:hover td {
   transition: background var(--transicion);
 }
 
+.fila-precio-producto {
+  cursor: zoom-in;
+}
+
+.fila-precio-producto:focus-visible td {
+  outline: 2px solid var(--rosa-oscuro);
+  outline-offset: -2px;
+}
+
 .precios-page .titulo-pagina {
   background: linear-gradient(135deg, rgba(239, 229, 216, 0.92), rgba(232, 220, 203, 0.58));
 }

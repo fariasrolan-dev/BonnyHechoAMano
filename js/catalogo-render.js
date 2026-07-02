@@ -218,6 +218,14 @@ function inicializarTablaPreciosDesdeDatos() {
       const fila = document.createElement("tr");
       const categoria = nombresCategoriasTabla[producto.categoria] || "Producto";
 
+      fila.className = "fila-precio-producto";
+      fila.tabIndex = 0;
+      fila.dataset.imagen = producto.imagen;
+      fila.dataset.nombre = producto.nombre;
+      fila.setAttribute("role", "button");
+      fila.setAttribute("aria-label", `Ver imagen de ${producto.nombre}`);
+      fila.setAttribute("title", `Ver imagen de ${producto.nombre}`);
+
       fila.appendChild(crearCeldaTabla(producto.nombre, "Producto"));
       fila.appendChild(crearCeldaTabla(categoria, "Categoria"));
       fila.appendChild(crearCeldaTabla(obtenerPrecioVisible(producto.precio), "Precio"));

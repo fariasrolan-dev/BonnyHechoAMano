@@ -339,6 +339,15 @@ button:hover {
   display: none;
 }
 
+.ayuda-imagen {
+  width: min(100%, 720px);
+  margin: 0 auto 24px;
+  color: var(--gris);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
 /* Modal para ampliar imagenes manteniendo la paleta calida */
 .imagen-interactiva {
   cursor: pointer;
