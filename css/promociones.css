@@ -41,8 +41,9 @@
    ============================================= */
 
 .promociones {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
   padding: 20px 60px 80px;
 }
@@ -52,6 +53,7 @@
    ============================================= */
 
 .promo-card {
+  flex: 0 1 330px;
   background: var(--blanco);
   padding: 20px;
   border-radius: 20px;
@@ -144,7 +146,6 @@
 
 @media (max-width: 1024px) {
   .promociones {
-    grid-template-columns: repeat(2, 1fr);
     padding: 20px 30px 60px;
   }
 }
@@ -155,7 +156,10 @@
   }
 
   .promociones {
-    grid-template-columns: 1fr;
     padding: 20px 20px 50px;
+  }
+
+  .promo-card {
+    flex-basis: min(100%, 340px);
   }
 }

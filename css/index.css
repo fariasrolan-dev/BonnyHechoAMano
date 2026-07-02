@@ -42,6 +42,8 @@
 }
 
 .hero-imagen img {
+  height: 430px;
+  object-fit: cover;
   border-radius: 30px;
   box-shadow: 0 20px 50px rgba(173, 166, 154, 0.18);
   transition: transform 0.5s ease;
@@ -70,6 +72,30 @@
 .contenedor-productos .card {
   width: 100%;
   justify-self: center;
+}
+
+.contenedor-productos .card h3 {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.25;
+}
+
+.contenedor-productos .card .descripcion-destacado {
+  min-height: 76px;
+  padding: 0 16px;
+  color: var(--gris);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-productos .card .precio-destacado {
+  margin-top: auto;
 }
 
 /* =============================================
@@ -107,6 +133,8 @@
 }
 
 .nosotros-imagen img {
+  height: 360px;
+  object-fit: cover;
   border-radius: 25px;  
   box-shadow: 0 15px 40px rgba(173, 166, 154, 0.15);
 }
@@ -134,6 +162,12 @@
 
   .hero-imagen {
     width: 100%;
+  }
+
+  .hero-imagen img,
+  .nosotros-imagen img {
+    height: auto;
+    max-height: 380px;
   }
 
   .hero-texto h1 {

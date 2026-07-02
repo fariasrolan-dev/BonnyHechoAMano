@@ -3,11 +3,13 @@
    ============================================= */
 
 .contacto {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
+  align-items: stretch;
+  gap: 42px;
   padding: 80px 60px;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 /* =============================================
@@ -15,7 +17,9 @@
    ============================================= */
 
 .contacto-texto {
-  width: 45%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .contacto-texto h1 {
@@ -34,10 +38,9 @@
 
 /* Info de contacto con iconos */
 .contacto-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 25px;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
 }
 
 .contacto-info-item {
@@ -46,6 +49,11 @@
   gap: 12px;
   font-size: 15px;
   color: var(--texto);
+  min-height: 44px;
+  padding: 10px 12px;
+  background: rgba(255, 253, 248, 0.72);
+  border: 1px solid rgba(139, 115, 85, 0.12);
+  border-radius: 12px;
 }
 
 .contacto-info-item a {
@@ -66,6 +74,8 @@
 }
 
 .contacto-texto img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: var(--sombra);
 }
@@ -76,11 +86,12 @@
 
 .formulario {
   background: var(--blanco);
-  width: 50%;
+  width: 100%;
   padding: 40px;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
+  align-self: stretch;
   box-shadow: var(--sombra);
   animation: fadeUp 0.6s ease both;
 }
@@ -169,27 +180,27 @@
 @media (max-width: 1024px) {
   .contacto {
     padding: 60px 30px;
-    gap: 40px;
+    gap: 30px;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
   }
 }
 
 @media (max-width: 768px) {
   .contacto {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     padding: 50px 20px;
   }
 
   .contacto-texto {
-    width: 100%;
     text-align: center;
   }
 
   .contacto-info-item {
     justify-content: center;
+    text-align: left;
   }
 
   .formulario {
-    width: 100%;
     padding: 25px;
   }
 }
