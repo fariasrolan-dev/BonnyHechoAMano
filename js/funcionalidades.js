@@ -7,36 +7,8 @@ function normalizarTexto(texto) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9\s/+.]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
-}
-
-// Agrega variantes frecuentes para que la busqueda encuentre nombres similares.
-function obtenerVariantesBusqueda(texto) {
-  const variantes = [texto];
-
-  if (texto.includes("sulivan")) {
-    variantes.push(texto.replace(/sulivan/g, "sullivan"));
-  }
-
-  if (texto.includes("sullivan")) {
-    variantes.push(texto.replace(/sullivan/g, "sulivan"));
-  }
-
-  if (texto.includes("virgen")) {
-    variantes.push(texto.replace(/virgen/g, "virgenes"));
-  }
-
-  if (texto.includes("personalizado")) {
-    variantes.push(texto.replace(/personalizado/g, "personalizados"));
-  }
-
-  if (texto.includes("ramo")) {
-    variantes.push(texto.replace(/ramo/g, "ramos"));
-  }
-
-  return variantes.join(" ");
 }
 
 // Obtiene la imagen principal de una tarjeta para usar su alt y ruta en filtros.
@@ -61,10 +33,6 @@ function obtenerCategoriaVisible(categoria) {
 
 // Junta el contenido visible y metadatos de cada tarjeta en un texto buscable.
 function obtenerTextoBuscable(tarjeta) {
-  if (tarjeta.dataset.busqueda) {
-    return tarjeta.dataset.busqueda;
-  }
-
   const imagen = obtenerImagenPrincipal(tarjeta);
   const categoria = tarjeta.dataset.categoria;
   const partes = [
@@ -75,11 +43,7 @@ function obtenerTextoBuscable(tarjeta) {
     imagen ? imagen.src : "",
   ];
 
-  const textoNormalizado = normalizarTexto(partes.filter(Boolean).join(" "));
-  const textoBuscable = normalizarTexto(obtenerVariantesBusqueda(textoNormalizado));
-  tarjeta.dataset.busqueda = textoBuscable;
-
-  return textoBuscable;
+  return normalizarTexto(partes.filter(Boolean).join(" "));
 }
 
 // Activa todos los buscadores declarados con data-contenedor y data-tarjetas.
@@ -99,7 +63,7 @@ function inicializarBuscadoresProductos() {
     // Filtra cada tarjeta y muestra un mensaje cuando no hay coincidencias.
     function filtrarTarjetas() {
       const tarjetas = Array.from(contenedor.querySelectorAll(selectorTarjetas));
-      const textoBuscado = normalizarTexto(obtenerVariantesBusqueda(buscador.value));
+      const textoBuscado = normalizarTexto(buscador.value);
       const terminosBuscados = textoBuscado.split(/\s+/).filter(Boolean);
       let cantidadVisible = 0;
 
@@ -156,21 +120,17 @@ function inicializarGaleriaModal() {
   const botonCerrar = modal.querySelector(".galeria-cerrar");
 
   // Carga la imagen elegida dentro del modal y mueve el foco al boton cerrar.
-  function abrirModal(imagen) {
-    imagenModal.src = imagen.src;
-    imagenModal.alt = imagen.alt;
-    textoModal.textContent = imagen.alt;
+  function abrirModal(src, alt) {
+    imagenModal.src = src;
+    imagenModal.alt = alt;
+    textoModal.textContent = alt;
     modal.classList.add("activo");
     botonCerrar.focus();
   }
 
   // Abre el mismo modal usando los datos guardados en una fila de la tabla.
   function abrirModalDesdeFila(fila) {
-    imagenModal.src = fila.dataset.imagen;
-    imagenModal.alt = fila.dataset.nombre;
-    textoModal.textContent = fila.dataset.nombre;
-    modal.classList.add("activo");
-    botonCerrar.focus();
+    abrirModal(fila.dataset.imagen, fila.dataset.nombre);
   }
 
   // Oculta el modal y limpia la imagen para evitar referencias innecesarias.
@@ -181,7 +141,7 @@ function inicializarGaleriaModal() {
 
   imagenes.forEach((imagen) => {
     imagen.classList.add("imagen-interactiva");
-    imagen.addEventListener("click", () => abrirModal(imagen));
+    imagen.addEventListener("click", () => abrirModal(imagen.src, imagen.alt));
   });
 
   filasConImagen.forEach((fila) => {
