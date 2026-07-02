@@ -379,3 +379,30 @@ tr:hover td {
     padding: 0 20px 30px;
   }
 }
+
+/* =============================================
+   FILTRO DE CATEGORIAS (catalogo general)
+   ============================================= */
+
+.filtro-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 720px;
+  margin: 0 auto 24px;
+}
+
+.filtro-boton {
+  background: var(--blanco);
+  color: var(--texto);
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(139, 115, 85, 0.24);
+  font-size: 14px;
+}
+
+.filtro-boton.activo {
+  background: linear-gradient(90deg, var(--rosa-oscuro), var(--vainilla));
+  color: var(--blanco);
+}

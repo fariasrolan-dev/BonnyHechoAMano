@@ -99,6 +99,48 @@ function crearCardCategoria(producto) {
   `;
 }
 
+// Clave usada para recordar en localStorage la categoria elegida en el catalogo.
+const CLAVE_CATEGORIA_FILTRO = "bonny-catalogo-categoria";
+
+// Filtra las tarjetas del catalogo general por categoria y recuerda la eleccion
+// en localStorage para reaplicarla la proxima vez que se cargue la pagina.
+function inicializarFiltroCategoriaCatalogo() {
+  const contenedorFiltros = document.querySelector(".filtro-categorias");
+  const contenedorProductos = document.querySelector(".contenedor-productos");
+
+  if (!contenedorFiltros || !contenedorProductos) {
+    return;
+  }
+
+  const botones = Array.from(contenedorFiltros.querySelectorAll(".filtro-boton"));
+
+  // Oculta las tarjetas que no pertenecen a la categoria elegida y marca el boton activo.
+  function aplicarFiltroCategoria(categoria) {
+    const tarjetas = contenedorProductos.querySelectorAll(".card");
+
+    tarjetas.forEach((tarjeta) => {
+      const coincide = categoria === "todos" || tarjeta.dataset.categoria === categoria;
+      tarjeta.classList.toggle("oculto-categoria", !coincide);
+    });
+
+    botones.forEach((boton) => {
+      boton.classList.toggle("activo", boton.dataset.categoria === categoria);
+    });
+  }
+
+  botones.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const categoria = boton.dataset.categoria;
+      aplicarFiltroCategoria(categoria);
+      localStorage.setItem(CLAVE_CATEGORIA_FILTRO, categoria);
+    });
+  });
+
+  // Al cargar la pagina, recupera la ultima categoria guardada y la vuelve a aplicar.
+  const categoriaGuardada = localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos";
+  aplicarFiltroCategoria(categoriaGuardada);
+}
+
 // Busca contenedores con data-catalogo y les inyecta sus productos.
 function inicializarCatalogoDesdeDatos() {
   const contenedores = document.querySelectorAll("[data-catalogo]");

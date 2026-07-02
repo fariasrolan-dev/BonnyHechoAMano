@@ -335,7 +335,8 @@ button:hover {
   text-align: center;
 }
 
-.oculto-busqueda {
+.oculto-busqueda,
+.oculto-categoria {
   display: none;
 }
 

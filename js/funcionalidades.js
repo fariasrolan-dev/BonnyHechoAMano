@@ -75,7 +75,8 @@ function inicializarBuscadoresProductos() {
 
         tarjeta.classList.toggle("oculto-busqueda", !coincide);
 
-        if (coincide) {
+        // No cuenta como visible si el filtro de categoria ya la ocultaba.
+        if (coincide && !tarjeta.classList.contains("oculto-categoria")) {
           cantidadVisible += 1;
         }
       });

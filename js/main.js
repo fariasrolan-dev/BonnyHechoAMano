@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarCatalogoDesdeDatos();
   }
 
+  if (typeof inicializarFiltroCategoriaCatalogo === "function") {
+    inicializarFiltroCategoriaCatalogo();
+  }
+
   if (typeof inicializarTablaPreciosDesdeDatos === "function") {
     inicializarTablaPreciosDesdeDatos();
   }
