@@ -1,6 +1,7 @@
 // catalogo-render.js
 // Renderiza cards y tabla de precios desde catalogo-data.js.
 
+// Etiquetas cortas que aparecen en las tarjetas por categoria.
 const nombresCategorias = {
   amigurumis: "Amigurumi",
   llaveros: "Llavero",
@@ -9,6 +10,7 @@ const nombresCategorias = {
   virgenes: "Virgen tejida",
 };
 
+// Etiquetas en plural para la tabla de precios.
 const nombresCategoriasTabla = {
   amigurumis: "Amigurumis",
   llaveros: "Llaveros",
@@ -17,12 +19,15 @@ const nombresCategoriasTabla = {
   virgenes: "Virgenes",
 };
 
+// Numero de WhatsApp usado en botones de consulta.
 const whatsappBonny = "51929008614";
 
+// Quita prefijos repetidos para crear descripciones genericas cuando haga falta.
 function quitarPrefijoProducto(nombre, prefijo) {
   return nombre.replace(prefijo, "").trim();
 }
 
+// Devuelve la descripcion guardada en la data o genera una de respaldo.
 function obtenerDescripcionProducto(producto) {
   if (producto.descripcion) {
     return producto.descripcion;
@@ -95,6 +100,7 @@ function obtenerDescripcionProducto(producto) {
   return "Producto artesanal de Bonny, elaborado a mano con dedicacion y detalles pensados para cada pedido.";
 }
 
+// Convierte la ruta relativa de una imagen en URL completa para enviarla por WhatsApp.
 function obtenerUrlImagenProducto(producto) {
   if (typeof window !== "undefined" && window.location) {
     return new URL(producto.imagen, window.location.href).href;
@@ -103,6 +109,7 @@ function obtenerUrlImagenProducto(producto) {
   return producto.imagen;
 }
 
+// Crea un enlace de WhatsApp con nombre e imagen de referencia del producto.
 function obtenerLinkWhatsapp(producto) {
   const urlImagen = obtenerUrlImagenProducto(producto);
   const mensaje = `Hola Bonny, quiero consultar por ${producto.nombre}. Imagen de referencia: ${urlImagen}`;
@@ -110,6 +117,7 @@ function obtenerLinkWhatsapp(producto) {
   return `https://wa.me/${whatsappBonny}?text=${encodeURIComponent(mensaje)}`;
 }
 
+// Formatea el precio; si no hay precio definido, muestra "Consultar".
 function obtenerPrecioVisible(precio) {
   if (!precio || precio <= 0) {
     return "Consultar";
@@ -118,6 +126,7 @@ function obtenerPrecioVisible(precio) {
   return `S/ ${precio.toFixed(2)}`;
 }
 
+// Define tiempos de entrega referenciales por categoria.
 function obtenerTiempoEntrega(categoria) {
   if (categoria === "amigurumis") {
     return "5 a 8 dias";
@@ -126,6 +135,7 @@ function obtenerTiempoEntrega(categoria) {
   return "Hasta 5 dias";
 }
 
+// Crea la tarjeta usada en el catalogo general.
 function crearCardCatalogo(producto) {
   return `
         <div class="card fade-up" data-id="${producto.id}" data-categoria="${producto.categoria}">
@@ -140,6 +150,7 @@ function crearCardCatalogo(producto) {
   `;
 }
 
+// Crea la tarjeta usada en las paginas individuales de categoria.
 function crearCardCategoria(producto) {
   const etiqueta = nombresCategorias[producto.categoria] || "Producto";
 
@@ -161,6 +172,7 @@ function crearCardCategoria(producto) {
   `;
 }
 
+// Busca contenedores con data-catalogo y les inyecta sus productos.
 function inicializarCatalogoDesdeDatos() {
   const contenedores = document.querySelectorAll("[data-catalogo]");
 
@@ -183,6 +195,7 @@ function inicializarCatalogoDesdeDatos() {
   });
 }
 
+// Crea celdas de tabla con data-label para convertirlas en tarjetas en movil.
 function crearCeldaTabla(texto, etiqueta) {
   const celda = document.createElement("td");
   celda.textContent = texto;
@@ -194,6 +207,7 @@ function crearCeldaTabla(texto, etiqueta) {
   return celda;
 }
 
+// Genera todas las filas de la lista de precios desde la misma data del catalogo.
 function inicializarTablaPreciosDesdeDatos() {
   const cuerposTabla = document.querySelectorAll("[data-tabla-precios]");
 

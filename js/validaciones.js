@@ -1,6 +1,7 @@
 // validaciones.js
 // Valida el formulario de contacto y prepara el mensaje por WhatsApp.
 
+// Muestra un mensaje de error debajo del campo y mejora la accesibilidad.
 function mostrarError(campo, mensaje) {
   const idError = `error-${campo.id || campo.name}`;
   let mensajeError = document.getElementById(idError);
@@ -18,6 +19,7 @@ function mostrarError(campo, mensaje) {
   mensajeError.textContent = mensaje;
 }
 
+// Elimina el mensaje de error cuando el campo vuelve a ser valido.
 function limpiarError(campo) {
   const idError = `error-${campo.id || campo.name}`;
   const mensajeError = document.getElementById(idError);
@@ -31,6 +33,7 @@ function limpiarError(campo) {
   }
 }
 
+// Revisa que el nombre no este vacio y solo contenga letras o espacios.
 function validarNombre(campo) {
   const valor = campo.value.trim();
   const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
@@ -49,6 +52,7 @@ function validarNombre(campo) {
   return true;
 }
 
+// Valida formato de correo para formularios que incluyan un campo email.
 function validarCorreo(campo) {
   const valor = campo.value.trim();
   const formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -67,6 +71,7 @@ function validarCorreo(campo) {
   return true;
 }
 
+// Valida telefonos numericos entre 7 y 15 digitos si el formulario los usa.
 function validarTelefono(campo) {
   const valor = campo.value.trim();
   const soloNumeros = /^\d{7,15}$/;
@@ -85,6 +90,7 @@ function validarTelefono(campo) {
   return true;
 }
 
+// Comprueba que el usuario haya seleccionado una opcion del desplegable.
 function validarSeleccion(campo) {
   if (campo.value.trim() === "") {
     mostrarError(campo, "Selecciona una opcion.");
@@ -95,6 +101,7 @@ function validarSeleccion(campo) {
   return true;
 }
 
+// Evita enviar consultas vacias desde el campo de mensaje.
 function validarMensaje(campo) {
   if (campo.value.trim() === "") {
     mostrarError(campo, "Escribe tu mensaje o consulta.");
@@ -105,6 +112,7 @@ function validarMensaje(campo) {
   return true;
 }
 
+// Agrega una confirmacion visible cuando el formulario queda listo para WhatsApp.
 function mostrarMensajeExito(formulario) {
   let mensajeExito = formulario.querySelector(".mensaje-exito");
 
@@ -118,6 +126,7 @@ function mostrarMensajeExito(formulario) {
     "Se abrira WhatsApp con tu mensaje listo para enviar.";
 }
 
+// Devuelve el texto legible de la opcion seleccionada en el campo asunto.
 function obtenerTextoAsunto(campoAsunto) {
   if (!campoAsunto) {
     return "consulta general";
@@ -127,6 +136,7 @@ function obtenerTextoAsunto(campoAsunto) {
   return opcionSeleccionada ? opcionSeleccionada.textContent : campoAsunto.value;
 }
 
+// Construye el mensaje que se enviara como texto prellenado a WhatsApp.
 function crearMensajeWhatsappContacto(campos) {
   const asunto = obtenerTextoAsunto(campos.asunto).toLowerCase();
   const mensaje = campos.mensaje.value.trim();
@@ -137,6 +147,7 @@ function crearMensajeWhatsappContacto(campos) {
   ].join("\n");
 }
 
+// Abre WhatsApp en una pestaña nueva y limpia el formulario despues del envio.
 function enviarFormularioPorWhatsapp(formulario, campos) {
   const telefonoBonny = "51929008614";
   const mensaje = crearMensajeWhatsappContacto(campos);
@@ -147,6 +158,7 @@ function enviarFormularioPorWhatsapp(formulario, campos) {
   formulario.reset();
 }
 
+// Conecta validaciones en tiempo real y validacion final al enviar.
 function inicializarValidaciones() {
   const formularios = document.querySelectorAll(".formulario");
 

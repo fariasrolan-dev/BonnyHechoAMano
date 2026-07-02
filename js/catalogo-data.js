@@ -2,10 +2,11 @@
 // Datos centrales del catalogo.
 
 const data = [
+  // AMIGURUMIS: munecos y personajes tejidos a mano.
   {
     id: 1,
     nombre: "Amigurumi Ariel",
-    precio: 65.0,
+    precio: 85.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Ariel.jpg",
     descripcion: "Sirena tejida a mano con detalles suaves y acabado delicado.",
@@ -13,7 +14,7 @@ const data = [
   {
     id: 2,
     nombre: "Amigurumi Boo y Sulivan",
-    precio: 70.0,
+    precio: 120.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Boo y Sulivan.jpg",
     descripcion: "Duo tierno tejido a mano, ideal para regalar o coleccionar.",
@@ -21,7 +22,7 @@ const data = [
   {
     id: 3,
     nombre: "Canasta de Conejita",
-    precio: 62.0,
+    precio: 50.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Canasta de Conejita.jpeg",
     descripcion: "Canasta artesanal con conejita tejida y detalles decorativos.",
@@ -29,7 +30,7 @@ const data = [
   {
     id: 4,
     nombre: "Amigurumi Capibara",
-    precio: 55.0,
+    precio: 35.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Capibara.jpg",
     descripcion: "Capibara tejida a mano con estilo dulce y compacto.",
@@ -37,7 +38,7 @@ const data = [
   {
     id: 5,
     nombre: "Conejita Alegre",
-    precio: 58.0,
+    precio: 45.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Conejita Alegre.jpg",
     descripcion: "Conejita tejida con expresion alegre y detalles coloridos.",
@@ -45,7 +46,7 @@ const data = [
   {
     id: 6,
     nombre: "Conejita con Bolso",
-    precio: 60.0,
+    precio: 50.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Conejita con Bolso.jpg",
     descripcion: "Conejita artesanal con bolso, lista para un regalo especial.",
@@ -53,7 +54,7 @@ const data = [
   {
     id: 7,
     nombre: "Conejita con Sombrero",
-    precio: 62.0,
+    precio: 45.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Conejita con Sombrero.jpg",
     descripcion: "Conejita tejida con sombrero y acabado delicado.",
@@ -61,7 +62,7 @@ const data = [
   {
     id: 8,
     nombre: "Amigurumi Dooby",
-    precio: 50.0,
+    precio: 35.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Dooby.jpg",
     descripcion: "Personaje tejido a mano con forma tierna y expresiva.",
@@ -69,7 +70,7 @@ const data = [
   {
     id: 9,
     nombre: "Amigurumi La Bella y La Bestia",
-    precio: 80.0,
+    precio: 150.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/La Bella y La Bestia.jpg",
     descripcion: "Pareja tejida a mano, perfecta para un regalo romantico.",
@@ -77,7 +78,7 @@ const data = [
   {
     id: 10,
     nombre: "Amigurumi Mafalda",
-    precio: 0,
+    precio: 70.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Mafalda.jpeg",
     descripcion: "Figura tejida inspirada en Mafalda, con detalles de personaje.",
@@ -85,7 +86,7 @@ const data = [
   {
     id: 11,
     nombre: "Amigurumi Rapunzel y Pascal",
-    precio: 75.0,
+    precio: 95.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Rapunzel y Pascal.jpg",
     descripcion: "Rapunzel tejida con Pascal, llena de color y encanto.",
@@ -93,16 +94,17 @@ const data = [
   {
     id: 12,
     nombre: "Amigurumi Vaquita",
-    precio: 57.0,
+    precio: 40.0,
     categoria: "amigurumis",
     imagen: "media/imagenes/AMIGURUMIS/Vaquita.jpg",
     descripcion: "Vaquita tejida a mano, suave y de aspecto adorable.",
   },
 
+  // LLAVEROS: piezas pequenas pensadas para uso diario.
   {
     id: 13,
     nombre: "Llavero Jirafa",
-    precio: 15.0,
+    precio: 18.0,
     categoria: "llaveros",
     imagen: "media/imagenes/LLAVEROS/Llavero Jirafa.jpg",
     descripcion: "Llavero tejido de jirafa, practico y lleno de color.",
@@ -118,7 +120,7 @@ const data = [
   {
     id: 15,
     nombre: "Llavero Leon",
-    precio: 20.0,
+    precio: 18.0,
     categoria: "llaveros",
     imagen: "media/imagenes/LLAVEROS/Llavero Leon.jpg",
     descripcion: "Llavero de leon tejido a mano con acabado llamativo.",
@@ -132,10 +134,11 @@ const data = [
     descripcion: "Llavero de luna tejido a mano, delicado y decorativo.",
   },
 
+  // PERSONALIZADOS: figuras y cuadros hechos a pedido.
   {
     id: 17,
     nombre: "Personalizado Abejitas Maya",
-    precio: 65.0,
+    precio: 120.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Abejitas Maya.jpg",
     descripcion: "Pareja de abejitas tejidas para un detalle dulce y especial.",
@@ -143,7 +146,7 @@ const data = [
   {
     id: 18,
     nombre: "Cuadro de Amor",
-    precio: 0,
+    precio: 130,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Cuadro de Amor.jpeg",
     descripcion: "Cuadro decorativo personalizado con detalle tejido de amor.",
@@ -151,7 +154,7 @@ const data = [
   {
     id: 19,
     nombre: "Cuadro de Ositos Amorosos",
-    precio: 72.0,
+    precio: 100.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Cuadro de Ositos Amorosos.jpg",
     descripcion: "Cuadro con ositos tejidos, ideal para un regalo afectuoso.",
@@ -159,15 +162,15 @@ const data = [
   {
     id: 20,
     nombre: "Muñecas Jo",
-    precio: 0,
+    precio: 90,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Muñecas Jo.jpg",
-    descripcion: "Munecas personalizadas tejidas con detalles de inspiracion.",
+    descripcion: "Munecas personalizadas tejidas con detalles de inspiracion. Precio por Unidad",
   },
   {
     id: 21,
     nombre: "Personalizado Alianza Lima",
-    precio: 0,
+    precio: 65.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Alianza Lima.jpeg",
     descripcion: "Figura personalizada con tematica de Alianza Lima.",
@@ -175,7 +178,7 @@ const data = [
   {
     id: 22,
     nombre: "Personalizado Campesino",
-    precio: 0,
+    precio: 100.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Campesino.jpeg",
     descripcion: "Figura campesina personalizada con detalles artesanales.",
@@ -183,7 +186,7 @@ const data = [
   {
     id: 23,
     nombre: "Personalizado Diseñadora",
-    precio: 0,
+    precio: 65.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Diseñadora.jpeg",
     descripcion: "Figura personalizada de disenadora con accesorios tejidos.",
@@ -191,7 +194,7 @@ const data = [
   {
     id: 24,
     nombre: "Personalizado Geisha",
-    precio: 70.0,
+    precio: 100.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Geisha.jpg",
     descripcion: "Geisha personalizada tejida con vestido y detalles finos.",
@@ -199,7 +202,7 @@ const data = [
   {
     id: 25,
     nombre: "Personalizado Hombre 2",
-    precio: 68.0,
+    precio: 35.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Hombre 2.jpg",
     descripcion: "Figura masculina personalizada con acabado artesanal.",
@@ -215,7 +218,7 @@ const data = [
   {
     id: 27,
     nombre: "Personalizado Mujer 2",
-    precio: 68.0,
+    precio: 110.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Mujer 2.jpg",
     descripcion: "Figura femenina personalizada con rasgos y colores a pedido.",
@@ -223,7 +226,7 @@ const data = [
   {
     id: 28,
     nombre: "Personalizado Mujer",
-    precio: 65.0,
+    precio: 110.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Mujer.jpg",
     descripcion: "Figura de mujer tejida a mano y personalizada.",
@@ -231,7 +234,7 @@ const data = [
   {
     id: 29,
     nombre: "Personalizado Obstetra",
-    precio: 75.0,
+    precio: 110.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Obstetra.jpg",
     descripcion: "Figura profesional personalizada con detalles de obstetra.",
@@ -239,7 +242,7 @@ const data = [
   {
     id: 30,
     nombre: "Personalizado Policia",
-    precio: 75.0,
+    precio: 35.0,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Policia.jpg",
     descripcion: "Figura policial personalizada con uniforme tejido.",
@@ -247,7 +250,7 @@ const data = [
   {
     id: 31,
     nombre: "Personalizado Psicologa",
-    precio: 0,
+    precio: 65,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Psicologa.jpeg",
     descripcion: "Figura profesional personalizada con detalles de psicologa.",
@@ -255,16 +258,17 @@ const data = [
   {
     id: 32,
     nombre: "Personalizado Trabajador",
-    precio: 0,
+    precio: 110,
     categoria: "personalizados",
     imagen: "media/imagenes/PERSONALIZADOS/Personalizado Trabajador.jpg",
     descripcion: "Figura de trabajador personalizada con detalles a medida.",
   },
 
+  // RAMOS: flores tejidas, macetas y arreglos tematicos.
   {
     id: 33,
     nombre: "Macetas",
-    precio: 52.0,
+    precio: 35.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Macetas.jpg",
     descripcion: "Macetas tejidas con flores decorativas y acabado artesanal.",
@@ -272,7 +276,7 @@ const data = [
   {
     id: 34,
     nombre: "Ramo Amarillo",
-    precio: 50.0,
+    precio: 60.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Amarillo.jpg",
     descripcion: "Ramo amarillo tejido a mano, alegre y luminoso.",
@@ -288,7 +292,7 @@ const data = [
   {
     id: 36,
     nombre: "Ramo Girasol",
-    precio: 60.0,
+    precio: 40.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Girasol.jpg",
     descripcion: "Ramo de girasol tejido, ideal para un regalo duradero.",
@@ -296,7 +300,7 @@ const data = [
   {
     id: 37,
     nombre: "Ramo Lirio Rojo",
-    precio: 0,
+    precio: 40,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Lirio Rojo.jpg",
     descripcion: "Ramo de lirio rojo tejido con presencia elegante.",
@@ -312,7 +316,7 @@ const data = [
   {
     id: 39,
     nombre: "Ramo Muelita",
-    precio: 62.0,
+    precio: 95.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Muelita.jpg",
     descripcion: "Ramo tematico de muelita, dulce y original para regalar.",
@@ -320,7 +324,7 @@ const data = [
   {
     id: 40,
     nombre: "Ramo Personalizado",
-    precio: 0,
+    precio: 85.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Personalizado.jpg",
     descripcion: "Ramo tejido a pedido con colores y detalles personalizados.",
@@ -328,7 +332,7 @@ const data = [
   {
     id: 41,
     nombre: "Ramo Pinguinos",
-    precio: 55.0,
+    precio: 60.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Pinguinos.jpg",
     descripcion: "Ramo con pinguinos tejidos, tierno y diferente.",
@@ -336,7 +340,7 @@ const data = [
   {
     id: 42,
     nombre: "Ramo Pooh",
-    precio: 68.0,
+    precio: 110.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Pooh.jpg",
     descripcion: "Ramo tematico Pooh con flores tejidas y toque infantil.",
@@ -344,7 +348,7 @@ const data = [
   {
     id: 43,
     nombre: "Ramo Reversible",
-    precio: 70.0,
+    precio: 40.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Reversible.jpg",
     descripcion: "Ramo reversible tejido con doble encanto visual.",
@@ -352,7 +356,7 @@ const data = [
   {
     id: 44,
     nombre: "Ramo Rosa + Tulipán",
-    precio: 0,
+    precio: 55.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Rosa + Tulipán.jpg",
     descripcion: "Combinacion de rosa y tulipan tejido para un detalle fino.",
@@ -360,7 +364,7 @@ const data = [
   {
     id: 45,
     nombre: "Ramo Rosa Morada",
-    precio: 58.0,
+    precio: 35.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Rosa Morada.jpg",
     descripcion: "Ramo de rosa morada tejida, delicado y elegante.",
@@ -368,7 +372,7 @@ const data = [
   {
     id: 46,
     nombre: "Ramo Rosa Roja",
-    precio: 60.0,
+    precio: 15.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Rosa Roja.jpg",
     descripcion: "Ramo de rosa roja tejida, clasico y romantico.",
@@ -376,7 +380,7 @@ const data = [
   {
     id: 47,
     nombre: "Ramo Rosa Rosada",
-    precio: 60.0,
+    precio: 15.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Rosa Rosada.jpg",
     descripcion: "Ramo de rosa rosada tejida, suave y femenino.",
@@ -384,7 +388,7 @@ const data = [
   {
     id: 48,
     nombre: "Ramo Rosas + Margaritas",
-    precio: 0,
+    precio: 50.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Rosas + Margaritas.jpg",
     descripcion: "Ramo mixto de rosas y margaritas tejidas a mano.",
@@ -392,7 +396,7 @@ const data = [
   {
     id: 49,
     nombre: "Ramo Snoopy",
-    precio: 68.0,
+    precio: 55.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Snoopy.jpg",
     descripcion: "Ramo Snoopy tejido con flores y detalle tematico.",
@@ -400,7 +404,7 @@ const data = [
   {
     id: 50,
     nombre: "Ramo Tulipán + Margarita",
-    precio: 0,
+    precio: 60.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Tulipán + Margarita.jpg",
     descripcion: "Ramo de tulipan y margarita tejido con acabado colorido.",
@@ -408,16 +412,17 @@ const data = [
   {
     id: 51,
     nombre: "Ramo Tulipán + Tulipán Pequeño + Margarita",
-    precio: 0,
+    precio: 35.0,
     categoria: "ramos",
     imagen: "media/imagenes/RAMOS FLORES/Ramo Tulipán +Tulipán Pequeño + Margarita.jpg",
     descripcion: "Ramo mixto de tulipanes y margarita tejido a mano.",
   },
 
+  // VIRGENES: figuras religiosas tejidas a mano.
   {
     id: 52,
     nombre: "Virgen de Guadalupe 2",
-    precio: 55.0,
+    precio: 80.0,
     categoria: "virgenes",
     imagen: "media/imagenes/VIRGENES/Virgen de Guadalupe 2.jpg",
     descripcion: "Virgen de Guadalupe tejida con acabado sobrio y delicado.",
@@ -425,7 +430,7 @@ const data = [
   {
     id: 53,
     nombre: "Virgen de Guadalupe con Rosario",
-    precio: 65.0,
+    precio: 95.0,
     categoria: "virgenes",
     imagen: "media/imagenes/VIRGENES/Virgen de Guadalupe con Rosario.jpg",
     descripcion: "Virgen tejida con rosario, ideal para decorar o regalar.",
@@ -433,7 +438,7 @@ const data = [
   {
     id: 54,
     nombre: "Virgen de Guadalupe",
-    precio: 55.0,
+    precio: 80.0,
     categoria: "virgenes",
     imagen: "media/imagenes/VIRGENES/Virgen de Guadalupe.jpg",
     descripcion: "Figura tejida de la Virgen de Guadalupe con detalles finos.",
@@ -441,7 +446,7 @@ const data = [
   {
     id: 55,
     nombre: "Virgen Maria",
-    precio: 50.0,
+    precio: 65.0,
     categoria: "virgenes",
     imagen: "media/imagenes/VIRGENES/Virgen Maria.jpg",
     descripcion: "Virgen Maria tejida a mano, sencilla y devocional.",

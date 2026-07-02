@@ -1,6 +1,7 @@
 // funcionalidades.js
 // Busqueda, galeria modal y boton volver arriba.
 
+// Normaliza textos para que la busqueda no dependa de mayusculas ni tildes.
 function normalizarTexto(texto) {
   return String(texto || "")
     .toLowerCase()
@@ -8,12 +9,14 @@ function normalizarTexto(texto) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+// Obtiene la imagen principal de una tarjeta para usar su alt y ruta en filtros.
 function obtenerImagenPrincipal(tarjeta) {
   return Array.from(tarjeta.children).find(
     (elemento) => elemento.tagName === "IMG"
   );
 }
 
+// Amplia las palabras clave por categoria para mejorar los resultados de busqueda.
 function obtenerCategoriaVisible(categoria) {
   const categorias = {
     amigurumis: "amigurumi amigurumis tejidos",
@@ -26,6 +29,7 @@ function obtenerCategoriaVisible(categoria) {
   return categorias[categoria] || categoria || "";
 }
 
+// Junta el contenido visible y metadatos de cada tarjeta en un texto buscable.
 function obtenerTextoBuscable(tarjeta) {
   const imagen = obtenerImagenPrincipal(tarjeta);
   const categoria = tarjeta.dataset.categoria;
@@ -40,6 +44,7 @@ function obtenerTextoBuscable(tarjeta) {
   return normalizarTexto(partes.filter(Boolean).join(" "));
 }
 
+// Activa todos los buscadores declarados con data-contenedor y data-tarjetas.
 function inicializarBuscadoresProductos() {
   const buscadores = document.querySelectorAll(".buscador-productos");
 
@@ -53,6 +58,7 @@ function inicializarBuscadoresProductos() {
       return;
     }
 
+    // Filtra cada tarjeta y muestra un mensaje cuando no hay coincidencias.
     function filtrarTarjetas() {
       const tarjetas = Array.from(contenedor.querySelectorAll(selectorTarjetas));
       const textoBuscado = normalizarTexto(buscador.value.trim());
@@ -82,6 +88,7 @@ function inicializarBuscadoresProductos() {
   });
 }
 
+// Crea un modal reutilizable para ampliar imagenes del sitio.
 function inicializarGaleriaModal() {
   const imagenes = document.querySelectorAll(
     ".card > img, .producto-card > img, .promo-card > img, .hero-imagen img, .hero-categoria .imagen img, .contacto-texto img"
@@ -109,6 +116,7 @@ function inicializarGaleriaModal() {
   const textoModal = modal.querySelector("p");
   const botonCerrar = modal.querySelector(".galeria-cerrar");
 
+  // Carga la imagen elegida dentro del modal y mueve el foco al boton cerrar.
   function abrirModal(imagen) {
     imagenModal.src = imagen.src;
     imagenModal.alt = imagen.alt;
@@ -117,6 +125,7 @@ function inicializarGaleriaModal() {
     botonCerrar.focus();
   }
 
+  // Oculta el modal y limpia la imagen para evitar referencias innecesarias.
   function cerrarModal() {
     modal.classList.remove("activo");
     imagenModal.src = "";
@@ -142,6 +151,7 @@ function inicializarGaleriaModal() {
   });
 }
 
+// Agrega un boton flotante para regresar suavemente al inicio de la pagina.
 function inicializarBotonVolverArriba() {
   const botonArriba = document.createElement("button");
   botonArriba.className = "volver-arriba";
