@@ -72,6 +72,26 @@
 .contenedor-productos .card {
   width: 100%;
   justify-self: center;
+  box-shadow: 0 8px 22px rgba(139, 115, 85, 0.10);
+  transform-origin: center bottom;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  will-change: transform;
+}
+
+.contenedor-productos .card:hover,
+.contenedor-productos .card:focus-within {
+  filter: saturate(1.04);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 34px rgba(139, 115, 85, 0.18);
+}
+
+.contenedor-productos .card img {
+  transition: transform 0.45s ease;
+}
+
+.contenedor-productos .card:hover img,
+.contenedor-productos .card:focus-within img {
+  transform: scale(1.05);
 }
 
 .contenedor-productos .card h3 {
@@ -96,6 +116,56 @@
 
 .contenedor-productos .card .precio-destacado {
   margin-top: auto;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.contenedor-productos .card .precio-destacado::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 34px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--rosa), var(--rosa-oscuro), var(--azul));
+  transform: translateX(-50%) scaleX(0.55);
+  transform-origin: center;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0.55;
+}
+
+.contenedor-productos .card:hover .precio-destacado::after,
+.contenedor-productos .card:focus-within .precio-destacado::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+}
+
+.contenedor-productos .card:nth-child(2n) {
+  animation-delay: 0.08s;
+}
+
+.contenedor-productos .card:nth-child(3n) {
+  animation-delay: 0.14s;
+}
+
+.contenedor-productos .card:nth-child(4n) {
+  animation-delay: 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contenedor-productos .card,
+  .contenedor-productos .card img,
+  .contenedor-productos .card .precio-destacado::after {
+    transition: none;
+  }
+
+  .contenedor-productos .card:hover,
+  .contenedor-productos .card:focus-within,
+  .contenedor-productos .card:hover img,
+  .contenedor-productos .card:focus-within img {
+    transform: none;
+  }
 }
 
 /* =============================================
