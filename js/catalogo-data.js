@@ -440,7 +440,7 @@ const data = [
     nombre: "Virgen de Guadalupe",
     precio: 80.0,
     categoria: "virgenes",
-    imagen: "media/imagenes/VIRGENES/Virgen de Guadalupe.jpg",
+    imagen: "media/imagenes/VIRGENES/Virgen de Guadalupe32131.jpg",
     descripcion: "Figura tejida de la Virgen de Guadalupe con detalles finos.",
   },
   {
