@@ -124,21 +124,43 @@ function inicializarFiltroCategoriaCatalogo() {
     });
 
     botones.forEach((boton) => {
-      boton.classList.toggle("activo", boton.dataset.categoria === categoria);
+      const estaActivo = boton.dataset.categoria === categoria;
+      boton.classList.toggle("activo", estaActivo);
+      boton.setAttribute("aria-selected", String(estaActivo));
     });
   }
 
   botones.forEach((boton) => {
+    boton.setAttribute("aria-selected", "false");
+
     boton.addEventListener("click", () => {
       const categoria = boton.dataset.categoria;
-      aplicarFiltroCategoria(categoria);
       localStorage.setItem(CLAVE_CATEGORIA_FILTRO, categoria);
+
+      if (boton.tagName === "A") {
+        return;
+      }
+
+      aplicarFiltroCategoria(categoria);
+
+      const buscador = document.querySelector(".buscador-productos");
+      if (buscador) {
+        buscador.dispatchEvent(new Event("input"));
+      }
     });
   });
 
-  // Al cargar la pagina, recupera la ultima categoria guardada y la vuelve a aplicar.
-  const categoriaGuardada = localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos";
-  aplicarFiltroCategoria(categoriaGuardada);
+  const categoriaUrl = new URLSearchParams(window.location.search).get("categoria");
+  if (categoriaUrl) {
+    localStorage.setItem(CLAVE_CATEGORIA_FILTRO, categoriaUrl);
+  }
+
+  // Al cargar la pagina, recupera la categoria indicada en la URL o la ultima guardada.
+  const categoriaGuardada = categoriaUrl || localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos";
+  const categoriaInicial = botones.some((boton) => boton.dataset.categoria === categoriaGuardada)
+    ? categoriaGuardada
+    : "todos";
+  aplicarFiltroCategoria(categoriaInicial);
 }
 
 // Busca contenedores con data-catalogo y les inyecta sus productos.
