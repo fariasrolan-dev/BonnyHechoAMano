@@ -358,7 +358,7 @@ const data = [
     nombre: "Ramo Rosa + Tulipán",
     precio: 55.0,
     categoria: "ramos",
-    imagen: "media/imagenes/RAMOS FLORES/Ramo Rosa + Tulipán.jpg",
+    imagen: "media/imagenes/RAMOS FLORES/Rosa_Tulipan.jpg",
     descripcion: "Combinacion de rosa y tulipan tejido para un detalle fino.",
   },
   {
@@ -390,7 +390,7 @@ const data = [
     nombre: "Ramo Rosas + Margaritas",
     precio: 50.0,
     categoria: "ramos",
-    imagen: "media/imagenes/RAMOS FLORES/Ramo Rosas + Margaritas.jpg",
+    imagen: "media/imagenes/RAMOS FLORES/Rosas_Margaritas.jpg",
     descripcion: "Ramo mixto de rosas y margaritas tejidas a mano.",
   },
   {
@@ -406,7 +406,7 @@ const data = [
     nombre: "Ramo Tulipán + Margarita",
     precio: 60.0,
     categoria: "ramos",
-    imagen: "media/imagenes/RAMOS FLORES/Ramo Tulipán + Margarita.jpg",
+    imagen: "media/imagenes/RAMOS FLORES/Tulipan_Margarita.jpg",
     descripcion: "Ramo de tulipan y margarita tejido con acabado colorido.",
   },
   {
@@ -414,7 +414,7 @@ const data = [
     nombre: "Ramo Tulipán + Tulipán Pequeño + Margarita",
     precio: 35.0,
     categoria: "ramos",
-    imagen: "media/imagenes/RAMOS FLORES/Ramo Tulipán +Tulipán Pequeño + Margarita.jpg",
+    imagen: "media/imagenes/RAMOS FLORES/Tulipanes_Margarita.jpg",
     descripcion: "Ramo mixto de tulipanes y margarita tejido a mano.",
   },
 
@@ -424,7 +424,7 @@ const data = [
     nombre: "Virgen de Guadalupe 2",
     precio: 80.0,
     categoria: "virgenes",
-    imagen: "media/imagenes/VIRGENES/Virgen de Guadalupe 2.jpg",
+    imagen: "media/imagenes/VIRGENES/Virgen_Guadalupe.jpg",
     descripcion: "Virgen de Guadalupe tejida con acabado sobrio y delicado.",
   },
   {
@@ -440,7 +440,7 @@ const data = [
     nombre: "Virgen de Guadalupe",
     precio: 80.0,
     categoria: "virgenes",
-    imagen: "media/imagenes/VIRGENES/Virgen de Guadalupe32131.jpg",
+    imagen: "media/imagenes/VIRGENES/Virgen_Guadalupe_2.jpg",
     descripcion: "Figura tejida de la Virgen de Guadalupe con detalles finos.",
   },
   {
