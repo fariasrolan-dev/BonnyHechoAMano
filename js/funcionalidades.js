@@ -51,7 +51,10 @@ function inicializarBuscadoresProductos() {
   const buscadores = document.querySelectorAll(".buscador-productos");
 
   buscadores.forEach((buscador) => {
-    const contenedor = document.querySelector(buscador.dataset.contenedor);
+    const seccionBuscador = buscador.closest("section") || document;
+    const contenedor =
+      seccionBuscador.querySelector(buscador.dataset.contenedor) ||
+      document.querySelector(buscador.dataset.contenedor);
     const selectorTarjetas = buscador.dataset.tarjetas;
     const mensajeSinResultados =
       buscador.parentElement.querySelector(".sin-resultados");
@@ -65,6 +68,11 @@ function inicializarBuscadoresProductos() {
       const tarjetas = Array.from(contenedor.querySelectorAll(selectorTarjetas));
       const textoBuscado = normalizarTexto(buscador.value);
       const terminosBuscados = textoBuscado.split(/\s+/).filter(Boolean);
+      const esCatalogoGeneral = contenedor.matches(".contenedor-productos");
+      const categoriaActiva = esCatalogoGeneral
+        ? document.querySelector(".filtro-boton.activo")?.dataset.categoria || "todos"
+        : "todos";
+      const buscarEnTodoElCatalogo = esCatalogoGeneral && terminosBuscados.length > 0;
       let cantidadVisible = 0;
 
       tarjetas.forEach((tarjeta) => {
@@ -72,10 +80,18 @@ function inicializarBuscadoresProductos() {
         const coincide =
           terminosBuscados.length === 0 ||
           terminosBuscados.every((termino) => textoTarjeta.includes(termino));
+        const coincideCategoria =
+          categoriaActiva === "todos" || tarjeta.dataset.categoria === categoriaActiva;
+
+        if (esCatalogoGeneral) {
+          tarjeta.classList.toggle(
+            "oculto-categoria",
+            !buscarEnTodoElCatalogo && !coincideCategoria
+          );
+        }
 
         tarjeta.classList.toggle("oculto-busqueda", !coincide);
 
-        // No cuenta como visible si el filtro de categoria ya la ocultaba.
         if (coincide && !tarjeta.classList.contains("oculto-categoria")) {
           cantidadVisible += 1;
         }
