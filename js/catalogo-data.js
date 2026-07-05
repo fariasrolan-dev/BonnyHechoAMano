@@ -1,7 +1,6 @@
 // catalogo-data.js
 // Datos centrales del catalogo.
-
-const data = [
+export const data = [
   // AMIGURUMIS: munecos y personajes tejidos a mano.
   {
     id: 1,

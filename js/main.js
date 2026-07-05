@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarValidaciones();
   }
 
-  if (typeof inicializarCatalogoDesdeDatos === "function") {
-    inicializarCatalogoDesdeDatos();
+  if (typeof inicializarCatalogo === "function") {
+    inicializarCatalogo();
   }
 
   if (typeof inicializarFiltroCategoriaCatalogo === "function") {

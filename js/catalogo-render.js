@@ -62,48 +62,69 @@ function obtenerTiempoEntrega(categoria) {
   return "Hasta 5 dias";
 }
 
-// Crea la tarjeta usada en el catalogo general.
-function crearCardCatalogo(producto) {
-  return `
-        <div class="card fade-up" data-id="${producto.id}" data-categoria="${producto.categoria}">
-          <img src="${producto.imagen}" alt="${producto.nombre}" />
-          <h3>${producto.nombre}</h3>
-          <p class="descripcion">${obtenerDescripcionProducto(producto)}</p>
-          <p class="precio-card">${obtenerPrecioVisible(producto.precio)}</p>
-          <a class="boton-card" href="${obtenerLinkWhatsapp(producto)}" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp sobre ${producto.nombre}">
-            <img src="media/svg/whatsapp_logo.svg" alt="" aria-hidden="true" />
-          </a>
-        </div>
-  `;
-}
-
-// Crea la tarjeta usada en las paginas individuales de categoria.
-function crearCardCategoria(producto) {
-  const etiqueta = nombresCategorias[producto.categoria] || "Producto";
-
-  return `
-        <article class="producto-card fade-up" data-id="${producto.id}" data-categoria="${producto.categoria}">
-          <img src="${producto.imagen}" alt="${producto.nombre}" />
-          <div class="contenido">
-            <span class="tag">${etiqueta}</span>
-            <h3>${producto.nombre}</h3>
-            <p class="descripcion">${obtenerDescripcionProducto(producto)}</p>
-            <div class="fila">
-              <span class="precio">${obtenerPrecioVisible(producto.precio)}</span>
-              <a class="boton-card" href="${obtenerLinkWhatsapp(producto)}" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp sobre ${producto.nombre}">
-                <img src="media/svg/whatsapp_logo.svg" alt="" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-        </article>
-  `;
-}
-
 // Clave usada para recordar en localStorage la categoria elegida en el catalogo.
+import { data } from "./catalogo-data.js";
 const CLAVE_CATEGORIA_FILTRO = "bonny-catalogo-categoria";
+const CATEGORIA_ACTUAL = (localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos");;
 
-// Filtra las tarjetas del catalogo general por categoria y recuerda la eleccion
-// en localStorage para reaplicarla la proxima vez que se cargue la pagina.
+//#region Construccion del catálogo
+// Principal
+function crearCardCatalogo(producto) {
+  let div = crearDivCatalogo(producto.id, producto.categoria);
+  let img = crearImagen(producto.imagen, producto.nombre, "imagen-interactiva");
+  let h3 = document.createElement("h3"); h3.innerText = producto.nombre;
+  let pDescp = crearParrafo("descripcion",obtenerDescripcionProducto(producto));
+  let pPrecio = crearParrafo("precio-card",obtenerPrecioVisible(producto.precio));
+  let a = crearElementoA(producto);
+  div.appendChild(img); div.appendChild(h3); div.appendChild(pDescp);
+  div.appendChild(pPrecio); div.appendChild(a); return div;
+}
+
+function crearCardCategoria(producto) {
+  let etiqueta = nombresCategorias[producto.categoria] || "Producto";
+  let artc = crearArticuloCatalogo(producto.id, producto.categoria);
+  let div = document.createElement("div"); div.setAttribute("class","contenido");
+  let span = crearSpan("tag",etiqueta);
+  let h3 = document.createElement("h3"); h3.innerText = producto.nombre;
+  let p = crearParrafo("descripcion",obtenerDescripcionProducto(producto));
+  let divFila = document.createElement("div"); divFila.setAttribute("class","fila");
+  divFila.appendChild(crearSpan("precio",obtenerPrecioVisible(producto.precio)));
+  divFila.appendChild(crearElementoA(producto));
+  div.appendChild(span); div.appendChild(h3); div.appendChild(p); div.appendChild(divFila);
+  artc.appendChild(crearImagen(producto.imagen,producto.nombre)); artc.appendChild(div);
+  return artc;
+}
+
+// Auxiliares
+function crearDivCatalogo(id,categoria) {let div = document.createElement("div"); div.classList.add("card", "fade-up");
+  div.dataset.id = id; div.dataset.categoria = categoria; return div;}
+
+function crearArticuloCatalogo(id,categoria) {let artc = document.createElement("article"); 
+  artc.classList.add("producto-card","fade-up"); artc.dataset.id = id; artc.dataset.categoria = categoria; return artc;}
+
+function crearParrafo(class_name = "", text = "") {let p = document.createElement("p"); 
+  p.setAttribute("class", class_name); p.innerText = text; return p;}
+
+function crearElementoA(producto) {let a = document.createElement("a"); a.setAttribute("class", "boton-card");
+  a.href = obtenerLinkWhatsapp(producto); a.target = "_blank"; a.rel = "noopener";
+  a.setAttribute("aria-label",`Consultar por WhatsApp sobre ${producto.nombre}`);
+  let img = crearImagen("media/svg/whatsapp_logo.svg"); img.setAttribute("aria-hidden", "true");
+  a.appendChild(img); return a;
+}
+
+function crearImagen(src, alt = "", class_name = "") {let img = document.createElement("img"); img.src = src; 
+  img.alt = alt; img.setAttribute("class", class_name); return img;}
+
+function crearSpan(class_name,text) {let span = document.createElement("span"); 
+  span.setAttribute("class",class_name); span.innerText = text; return span;}
+//#endregion
+
+//#region Filtro por categoría 
+// Recordar la elección en localStorage para reaplicarla la proxima vez que se cargue la pagina.
+function filtroCategoria(boton) {
+  
+}
+
 function inicializarFiltroCategoriaCatalogo() {
   const contenedorFiltros = document.querySelector(".filtro-categorias");
   const contenedorProductos = document.querySelector(".contenedor-productos");
@@ -160,29 +181,23 @@ function inicializarFiltroCategoriaCatalogo() {
   const categoriaInicial = botones.some((boton) => boton.dataset.categoria === categoriaGuardada)
     ? categoriaGuardada
     : "todos";
-  aplicarFiltroCategoria(categoriaInicial);
+  apli
+  carFiltroCategoria(categoriaInicial);
 }
+  
 
-// Busca contenedores con data-catalogo y les inyecta sus productos.
-function inicializarCatalogoDesdeDatos() {
-  const contenedores = document.querySelectorAll("[data-catalogo]");
+// Busca el contenedor local con data-catalogo y les inyecta sus productos.
+function inicializarCatalogo() {
+  let contenedor = document.querySelector("[data-catalogo]");
+  if (!contenedor) return;
 
-  contenedores.forEach((contenedor) => {
-    const categoria = contenedor.dataset.categoria;
-    const tipo = contenedor.dataset.tipo;
-    const productos = categoria === "todos"
-      ? data
-      : data.filter((producto) => producto.categoria === categoria);
+  let productos = CATEGORIA_ACTUAL === "todos" ? 
+    data : data.filter(p => p.categoria === CATEGORIA_ACTUAL);
 
-    const cards = productos.map((producto) => {
-      if (tipo === "catalogo") {
-        return crearCardCatalogo(producto);
-      }
-
-      return crearCardCategoria(producto);
-    });
-
-    contenedor.innerHTML = cards.join("");
+  productos.forEach(p => {
+    const card = contenedor.dataset.tipo === "catalogo" ? 
+      crearCardCatalogo(p) : crearCardCategoria(p);
+    contenedor.appendChild(card);
   });
 }
 
@@ -226,3 +241,7 @@ function inicializarTablaPreciosDesdeDatos() {
     });
   });
 }
+
+// Uso de funciones
+inicializarTablaPreciosDesdeDatos();
+inicializarCatalogo();
