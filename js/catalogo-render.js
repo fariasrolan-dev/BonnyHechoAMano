@@ -65,7 +65,7 @@ function obtenerTiempoEntrega(categoria) {
 // Clave usada para recordar en localStorage la categoria elegida en el catalogo.
 import { data } from "./catalogo-data.js";
 const CLAVE_CATEGORIA_FILTRO = "bonny-catalogo-categoria";
-const CATEGORIA_ACTUAL = (localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos");;
+let CATEGORIA_ACTUAL = (localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos");;
 
 //#region Construccion del catálogo
 // Principal
@@ -121,8 +121,10 @@ function crearSpan(class_name,text) {let span = document.createElement("span");
 
 //#region Filtro por categoría 
 // Recordar la elección en localStorage para reaplicarla la proxima vez que se cargue la pagina.
-function filtroCategoria(boton) {
-  
+function actualizarLocalstorage(event) {
+  let categoria = event.target.dataset.categoria;
+  localStorage.setItem(CLAVE_CATEGORIA_FILTRO,categoria);
+  CATEGORIA_ACTUAL = (localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos");
 }
 
 function inicializarFiltroCategoriaCatalogo() {
@@ -244,4 +246,9 @@ function inicializarTablaPreciosDesdeDatos() {
 
 // Uso de funciones
 inicializarTablaPreciosDesdeDatos();
+
 inicializarCatalogo();
+
+document.querySelectorAll(".filtro-boton").forEach(b => {
+    b.addEventListener("click", actualizarLocalstorage);
+});
