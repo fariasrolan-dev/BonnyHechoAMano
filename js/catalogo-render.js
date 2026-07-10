@@ -124,7 +124,13 @@ function crearSpan(class_name,text) {let span = document.createElement("span");
 function actualizarLocalstorage(event) {
   let categoria = event.target.dataset.categoria;
   localStorage.setItem(CLAVE_CATEGORIA_FILTRO,categoria);
-  CATEGORIA_ACTUAL = (localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos");
+  CATEGORIA_ACTUAL = categoria;
+
+  // Reiniciar catalogo
+  let contenedor = document.querySelector('.contenedor-productos');
+  if (contenedor) contenedor.innerHTML = ''; 
+
+  inicializarCatalogo();
 }
 
 function inicializarFiltroCategoriaCatalogo() {
