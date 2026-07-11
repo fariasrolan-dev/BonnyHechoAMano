@@ -192,7 +192,35 @@ function inicializarFiltroCategoriaCatalogo() {
   apli
   carFiltroCategoria(categoriaInicial);
 }
+//#endregion
   
+//#region Construcción de las promociones
+function actualizarPromoCard(card) {
+  let id = parseInt(card.dataset.id);
+  let descuento = parseFloat(card.dataset.descuento);
+  let producto = data.find(p => p.id === id);
+  if (!producto) return;
+
+  let div = document.createElement("div"); div.classList.add("descuento"); div.innerText = `-${descuento*100}%`;
+  let img = crearImagen(producto.imagen,`${producto.nombre} en promoción`);
+  let h2 = document.createElement("h2"); h2.innerText = producto.nombre;
+  let pAnterior = crearParrafo("precio-anterior",`S/ ${producto.precio.toFixed(2)}`);
+  let pActual = crearParrafo("precio",`S/ ${(producto.precio * (1 - descuento)).toFixed(2)}`);
+  let a = document.createElement("a"); a.href = obtenerLinkWhatsapp(producto); a.target = "_blank";
+  let i = document.createElement("i"); i.classList.add("fa-brands", "fa-whatsapp");
+
+  a.appendChild(i); a.append(" Comprar");
+  card.append(div,img,h2,pAnterior,pActual,a);
+}
+
+function inicializarPromociones() {
+  let cards = document.querySelectorAll(".promo-card");
+  if (cards.length === 0) return;
+
+  cards.forEach(actualizarPromoCard);
+}
+
+//#endregion
 
 // Busca el contenedor local con data-catalogo y les inyecta sus productos.
 function inicializarCatalogo() {
@@ -254,6 +282,8 @@ function inicializarTablaPreciosDesdeDatos() {
 inicializarTablaPreciosDesdeDatos();
 
 inicializarCatalogo();
+
+inicializarPromociones();
 
 document.querySelectorAll(".filtro-boton").forEach(b => {
     b.addEventListener("click", actualizarLocalstorage);

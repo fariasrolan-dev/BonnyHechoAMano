@@ -135,9 +135,26 @@
 }
 
 /* Boton */
-.promo-card button {
-  margin-top: 18px;
-  width: 100%;
+.promo-card a {
+  display: inline-block; margin-top: 18px; width: 100%;
+  background: linear-gradient(90deg, var(--rosa), var(--azul));
+  text-decoration: none;
+  color: var(--texto);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: background var(--transicion), transform var(--transicion), box-shadow var(--transicion);
+}
+
+.promo-card a:hover {
+  background: linear-gradient(90deg, var(--rosa-oscuro), var(--vainilla));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(172, 166, 154, 0.3);
 }
 
 /* =============================================
