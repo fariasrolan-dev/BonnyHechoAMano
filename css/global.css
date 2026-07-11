@@ -299,7 +299,7 @@ button:hover {
 
 /* Buscador de productos y promociones */
 .buscador-seccion {
-  max-width: 520px;
+  width: min(calc(100% - 40px), 520px);
   margin: 0 auto 28px;
   text-align: left;
 }
@@ -320,6 +320,7 @@ button:hover {
   background: var(--blanco);
   color: var(--texto);
   font-family: 'Poppins', sans-serif;
+  text-align: left;
   outline: none;
   transition: border var(--transicion), box-shadow var(--transicion);
 }

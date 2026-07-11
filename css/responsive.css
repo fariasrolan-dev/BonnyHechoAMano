@@ -44,9 +44,83 @@
   .hero-categoria h1 {
     font-size: 48px;
   }
+
+  .contenedor-productos,
+  .grid-productos,
+  .promociones,
+  .info-grid {
+    gap: 24px;
+  }
 }
 
 /* Tablets medianas: conserva dos columnas, pero con espacios mas eficientes */
+@media (max-width: 1024px) {
+  .contenedor-productos,
+  .grid-productos,
+  .promociones {
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .contenedor-productos .card,
+  .grid-productos .producto-card,
+  .promociones .promo-card {
+    margin-inline: auto;
+  }
+
+  .contenedor-productos,
+  .grid-productos,
+  .promociones,
+  .info-grid {
+    gap: 20px;
+  }
+
+  .hero-categoria .texto {
+    width: min(100%, 720px);
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .hero-categoria p {
+    margin-inline: auto;
+  }
+
+  .hero-categoria .chips {
+    justify-content: center;
+  }
+}
+
+/* Tablets pequenas: aprovecha dos columnas cuando realmente caben. */
+@media (min-width: 601px) and (max-width: 768px) {
+  .productos,
+  .seccion-productos,
+  .promociones {
+    padding-inline: 24px;
+  }
+
+  .contenedor-productos {
+    grid-template-columns: repeat(2, minmax(0, 280px));
+    gap: 20px;
+  }
+
+  .contenedor-productos .card {
+    width: min(100%, 280px);
+    max-width: 280px;
+  }
+
+  .grid-productos,
+  .promociones {
+    gap: 20px;
+  }
+
+  .grid-productos .producto-card,
+  .promociones .promo-card {
+    flex-basis: 320px;
+    width: min(100%, 320px);
+    max-width: 320px;
+  }
+}
+
 @media (min-width: 769px) and (max-width: 900px) {
   header {
     padding-inline: 22px;
@@ -148,8 +222,16 @@
     padding-inline: 16px;
   }
 
+  .contenedor-productos,
+  .grid-productos,
+  .promociones,
+  .info-grid {
+    gap: 18px;
+  }
+
   .buscador-seccion {
-    margin-inline: 16px;
+    width: min(calc(100% - 32px), 520px);
+    margin-inline: auto;
   }
 
   .card,
@@ -158,6 +240,11 @@
   .promo-card {
     width: min(100%, 360px);
     max-width: 360px;
+  }
+
+  .promo-card,
+  .producto-card {
+    flex-basis: min(100%, 360px);
   }
 
   .card img {
@@ -219,6 +306,13 @@
     padding: 22px 18px;
   }
 
+  .contenedor-productos,
+  .grid-productos,
+  .promociones,
+  .info-grid {
+    gap: 16px;
+  }
+
   .contacto-info-item {
     justify-content: flex-start;
     overflow-wrap: anywhere;
@@ -264,6 +358,13 @@
 
   .producto-card .contenido {
     padding-inline: 14px;
+  }
+
+  .contenedor-productos,
+  .grid-productos,
+  .promociones,
+  .info-grid {
+    gap: 14px;
   }
 
   footer {
