@@ -206,10 +206,7 @@ function actualizarPromoCard(card) {
   let h2 = document.createElement("h2"); h2.innerText = producto.nombre;
   let pAnterior = crearParrafo("precio-anterior",`S/ ${producto.precio.toFixed(2)}`);
   let pActual = crearParrafo("precio",`S/ ${(producto.precio * (1 - descuento)).toFixed(2)}`);
-  let a = document.createElement("a"); a.href = obtenerLinkWhatsapp(producto); a.target = "_blank";
-  let i = document.createElement("i"); i.classList.add("fa-brands", "fa-whatsapp");
-
-  a.appendChild(i); a.append(" Comprar");
+  let a = crearElementoA(producto);
   card.append(div,img,h2,pAnterior,pActual,a);
 }
 

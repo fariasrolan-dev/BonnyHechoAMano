@@ -76,14 +76,14 @@
 }
 
 /* Imagen */
-.promo-card img {
+.promo-card > img {
   height: 240px;
   object-fit: cover;
   border-radius: 15px;
   transition: transform var(--transicion);
 }
 
-.promo-card:hover img {
+.promo-card:hover > img {
   transform: scale(1.04);
 }
 
@@ -134,27 +134,46 @@
   margin-top: 6px;
 }
 
-/* Boton */
-.promo-card a {
-  display: inline-block; margin-top: 18px; width: 100%;
-  background: linear-gradient(90deg, var(--rosa), var(--azul));
+/* Boton de WhatsApp, igual al del catalogo */
+.promo-card .boton-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto 0;
   text-decoration: none;
   color: var(--texto);
-  border: none;
-  padding: 12px 24px;
-  border-radius: 30px;
+  background: linear-gradient(135deg, #e7f7ed, var(--rosa));
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 14px;
-  letter-spacing: 0.5px;
-  transition: background var(--transicion), transform var(--transicion), box-shadow var(--transicion);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background var(--transicion);
 }
 
-.promo-card a:hover {
-  background: linear-gradient(90deg, var(--rosa-oscuro), var(--vainilla));
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(172, 166, 154, 0.3);
+.promo-card .boton-card img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.promo-card .boton-card:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(172, 166, 154, 0.20);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-card .boton-card {
+    transition: none;
+  }
+
+  .promo-card .boton-card:hover,
+  .promo-card:hover .boton-card img {
+    transform: none;
+  }
 }
 
 /* =============================================

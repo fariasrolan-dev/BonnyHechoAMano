@@ -1,0 +1,302 @@
+/* Ajustes responsive compartidos por todas las paginas. */
+
+/* Monitores amplios */
+@media (min-width: 1440px) {
+  header {
+    padding-inline: max(60px, calc((100vw - 1320px) / 2));
+  }
+
+  .hero,
+  .nosotros,
+  .hero-categoria,
+  .productos,
+  .seccion-productos,
+  .tabla-productos,
+  .informacion,
+  .video,
+  .promociones {
+    padding-inline: max(60px, calc((100vw - 1320px) / 2));
+  }
+
+  .contacto {
+    max-width: 1320px;
+  }
+
+  .contenedor-productos .card {
+    flex-grow: 0;
+  }
+}
+
+/* Laptops y tablets grandes en horizontal */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  header,
+  .hero,
+  .nosotros,
+  .hero-categoria {
+    padding-inline: 40px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+
+  .hero-texto h1,
+  .hero-categoria h1 {
+    font-size: 48px;
+  }
+}
+
+/* Tablets medianas: conserva dos columnas, pero con espacios mas eficientes */
+@media (min-width: 769px) and (max-width: 900px) {
+  header {
+    padding-inline: 22px;
+  }
+
+  .logo img {
+    width: 62px;
+  }
+
+  nav {
+    gap: 13px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    gap: 28px;
+    padding: 60px 30px;
+  }
+
+  .hero-texto h1 {
+    font-size: 43px;
+  }
+
+  .nosotros {
+    gap: 35px;
+  }
+
+  .contacto {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+    padding-inline: 24px;
+  }
+
+  .formulario {
+    padding: 30px;
+  }
+}
+
+/* Moviles grandes */
+@media (max-width: 600px) {
+  header {
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
+  .logo img {
+    width: 60px;
+  }
+
+  nav.activo {
+    max-height: 430px;
+    padding-bottom: 8px;
+  }
+
+  nav a {
+    padding: 8px 12px;
+  }
+
+  .titulo,
+  .titulo-pagina {
+    padding: 52px 16px 38px;
+  }
+
+  .titulo h1,
+  .titulo-pagina h1,
+  .contacto-texto h1,
+  .nosotros-texto h1 {
+    font-size: clamp(30px, 9vw, 36px);
+  }
+
+  .hero,
+  .nosotros,
+  .contacto {
+    padding: 42px 16px;
+  }
+
+  .hero-texto h1,
+  .hero-categoria h1 {
+    font-size: clamp(32px, 10vw, 38px);
+  }
+
+  .hero-categoria {
+    gap: 28px;
+    padding: 42px 16px 26px;
+  }
+
+  .hero-categoria .chips {
+    justify-content: center;
+  }
+
+  .productos,
+  .seccion-productos,
+  .promociones,
+  .informacion,
+  .video,
+  .tabla-productos {
+    padding-inline: 16px;
+  }
+
+  .buscador-seccion {
+    margin-inline: 16px;
+  }
+
+  .card,
+  .contenedor-productos .card,
+  .producto-card,
+  .promo-card {
+    width: min(100%, 360px);
+    max-width: 360px;
+  }
+
+  .card img {
+    height: min(105vw, 380px);
+  }
+
+  .notas-adicionales {
+    padding: 26px 14px;
+  }
+
+  .notas-adicionales .notas-contenido {
+    padding: 20px 16px;
+  }
+
+  .notas-adicionales h2,
+  .informacion h2,
+  .video h2,
+  .seccion-productos h2 {
+    font-size: 28px;
+  }
+}
+
+/* Moviles compactos */
+@media (max-width: 480px) {
+  .hero-texto p,
+  .hero-categoria p,
+  .nosotros-texto p,
+  .contacto-texto p {
+    font-size: 15px;
+  }
+
+  .hero-imagen img,
+  .nosotros-imagen img,
+  .contacto-texto img {
+    border-radius: 18px;
+  }
+
+  .hero-categoria .imagen {
+    width: min(100%, 280px);
+  }
+
+  .hero-categoria .imagen img {
+    height: 260px;
+  }
+
+  .subnav-categorias {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+
+  .subnav-categorias a,
+  .subnav-categorias .filtro-boton {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .formulario,
+  .info-box {
+    padding: 22px 18px;
+  }
+
+  .contacto-info-item {
+    justify-content: flex-start;
+    overflow-wrap: anywhere;
+  }
+
+  .galeria-modal {
+    padding: 10px;
+  }
+
+  .galeria-contenido {
+    width: 96vw;
+    padding: 12px;
+  }
+
+  .volver-arriba {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+/* Pantallas especialmente estrechas */
+@media (max-width: 360px) {
+  header,
+  .hero,
+  .nosotros,
+  .contacto,
+  .hero-categoria {
+    padding-inline: 12px;
+  }
+
+  .titulo h1,
+  .titulo-pagina h1,
+  .hero-texto h1,
+  .hero-categoria h1,
+  .contacto-texto h1,
+  .nosotros-texto h1 {
+    font-size: 29px;
+  }
+
+  .formulario {
+    padding: 20px 14px;
+  }
+
+  .producto-card .contenido {
+    padding-inline: 14px;
+  }
+
+  footer {
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+}
+
+/* Evita interacciones de hover pegajosas en dispositivos tactiles. */
+@media (hover: none) {
+  .card:hover,
+  .producto-card:hover,
+  .promo-card:hover,
+  .info-box:hover,
+  .nosotros-imagen img:hover,
+  .hero-imagen img:hover {
+    transform: none;
+  }
+}
+
+/* Aprovecha mejor la altura limitada de un telefono en horizontal. */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    position: relative;
+  }
+
+  nav.activo {
+    max-height: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .galeria-contenido img {
+    max-height: 62vh;
+  }
+}
