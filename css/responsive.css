@@ -27,6 +27,61 @@
   }
 }
 
+/* Monitores grandes y ultraanchos: aprovecha el espacio sin tocar los bordes. */
+@media (min-width: 1600px) {
+  header {
+    padding-inline: max(72px, calc((100vw - 1600px) / 2));
+  }
+
+  .hero,
+  .nosotros,
+  .hero-categoria,
+  .productos,
+  .seccion-productos,
+  .tabla-productos,
+  .informacion,
+  .video,
+  .promociones {
+    padding-inline: max(72px, calc((100vw - 1600px) / 2));
+  }
+
+  .contacto {
+    max-width: 1500px;
+  }
+
+  .productos .contenedor-productos {
+    grid-template-columns: repeat(6, minmax(220px, 240px));
+    width: min(100%, 1560px);
+    gap: 24px;
+  }
+
+  .productos .contenedor-productos .card {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .contenedor-productos,
+  .grid-productos,
+  .promociones,
+  .info-grid {
+    gap: 24px;
+  }
+
+  .info-grid {
+    width: min(100%, 1500px);
+  }
+
+  .hero-texto,
+  .nosotros-texto {
+    max-width: 760px;
+  }
+
+  .hero-imagen,
+  .nosotros-imagen {
+    max-width: 680px;
+  }
+}
+
 /* Laptops y tablets grandes en horizontal */
 @media (min-width: 1025px) and (max-width: 1279px) {
   header,
