@@ -65,7 +65,7 @@
   .contenedor-productos .card,
   .grid-productos .producto-card,
   .promociones .promo-card {
-    margin-inline: auto;
+    margin-inline: 0;
   }
 
   .contenedor-productos,
