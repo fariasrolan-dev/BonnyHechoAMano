@@ -189,8 +189,7 @@ function inicializarFiltroCategoriaCatalogo() {
   const categoriaInicial = botones.some((boton) => boton.dataset.categoria === categoriaGuardada)
     ? categoriaGuardada
     : "todos";
-  apli
-  carFiltroCategoria(categoriaInicial);
+  aplicarFiltroCategoria(categoriaInicial);
 }
 //#endregion
   
