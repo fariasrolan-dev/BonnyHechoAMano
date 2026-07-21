@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarBuscadoresProductos();
   }
 
+  if (typeof inicializarWhatsappDestacados === "function") {
+    inicializarWhatsappDestacados();
+  }
+
   if (typeof inicializarGaleriaModal === "function") {
     inicializarGaleriaModal();
   }

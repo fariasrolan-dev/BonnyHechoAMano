@@ -186,6 +186,49 @@ function inicializarGaleriaModal() {
   });
 }
 
+// Numero de WhatsApp usado en el boton de consulta de productos destacados.
+const whatsappBonnyDestacados = "51929008614";
+
+// Arma el link de WhatsApp con el nombre y la imagen de referencia del producto.
+function obtenerLinkWhatsappDestacado(nombre, urlImagen) {
+  const mensaje = `Hola Bonny, quiero consultar por ${nombre}. Imagen de referencia: ${urlImagen}`;
+  return `https://wa.me/${whatsappBonnyDestacados}?text=${encodeURIComponent(mensaje)}`;
+}
+
+// Crea el boton de WhatsApp con el mismo icono usado en las cards del catalogo.
+function crearBotonWhatsappDestacado(nombre, urlImagen) {
+  const a = document.createElement("a");
+  a.className = "boton-card";
+  a.href = obtenerLinkWhatsappDestacado(nombre, urlImagen);
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.setAttribute("aria-label", `Consultar por WhatsApp sobre ${nombre}`);
+
+  const img = document.createElement("img");
+  img.src = "media/svg/whatsapp_logo.svg";
+  img.alt = "";
+  img.setAttribute("aria-hidden", "true");
+
+  a.appendChild(img);
+  return a;
+}
+
+// Agrega el boton de WhatsApp a cada card de productos destacados.
+function inicializarWhatsappDestacados() {
+  const cards = document.querySelectorAll(".productos .contenedor-productos .card");
+
+  cards.forEach((card) => {
+    const nombre = card.querySelector("h3")?.textContent.trim();
+    const imagen = card.querySelector("img");
+
+    if (!nombre || !imagen) {
+      return;
+    }
+
+    card.appendChild(crearBotonWhatsappDestacado(nombre, imagen.src));
+  });
+}
+
 // Agrega un boton flotante para regresar suavemente al inicio de la pagina.
 function inicializarBotonVolverArriba() {
   const botonArriba = document.createElement("button");

@@ -143,6 +143,33 @@
   opacity: 1;
 }
 
+/* Boton de WhatsApp dentro de la card destacada */
+.contenedor-productos .card .boton-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto 0;
+  text-decoration: none;
+  color: var(--texto);
+  background: linear-gradient(135deg, #e7f7ed, var(--rosa));
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background var(--transicion);
+}
+
+.contenedor-productos .card .boton-card img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.contenedor-productos .card .boton-card:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(172, 166, 154, 0.20);
+}
+
 .contenedor-productos .card:nth-child(2n) {
   animation-delay: 0.08s;
 }
@@ -158,14 +185,16 @@
 @media (prefers-reduced-motion: reduce) {
   .contenedor-productos .card,
   .contenedor-productos .card img,
-  .contenedor-productos .card .precio-destacado::after {
+  .contenedor-productos .card .precio-destacado::after,
+  .contenedor-productos .card .boton-card {
     transition: none;
   }
 
   .contenedor-productos .card:hover,
   .contenedor-productos .card:focus-within,
   .contenedor-productos .card:hover img,
-  .contenedor-productos .card:focus-within img {
+  .contenedor-productos .card:focus-within img,
+  .contenedor-productos .card .boton-card:hover {
     transform: none;
   }
 }
