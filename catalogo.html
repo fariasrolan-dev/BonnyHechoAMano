@@ -84,18 +84,34 @@
 
     <!-- PRODUCTOS - GRID -->
     <section class="productos">
-      <!-- Buscador que filtra las tarjetas visibles sin recargar la pagina -->
-      <div class="buscador-seccion">
-        <label for="buscador-productos">Buscar producto</label>
-        <input
-          class="buscador-productos"
-          id="buscador-productos"
-          type="search"
-          placeholder="Buscar por nombre o categoria"
-          data-contenedor=".contenedor-productos"
-          data-tarjetas=".card"
-        />
-        <p class="sin-resultados" hidden>No se encontraron productos.</p>
+      <!-- Buscador y orden por precio, ambos operan sobre las tarjetas visibles sin recargar la pagina -->
+      <div class="controles-productos">
+        <div class="buscador-seccion">
+          <label for="buscador-productos">Buscar producto</label>
+          <input
+            class="buscador-productos"
+            id="buscador-productos"
+            type="search"
+            placeholder="Buscar por nombre o categoria"
+            data-contenedor=".contenedor-productos"
+            data-tarjetas=".card"
+          />
+          <p class="sin-resultados" hidden>No se encontraron productos.</p>
+        </div>
+
+        <div class="orden-seccion">
+          <label for="orden-productos">Ordenar por precio</label>
+          <select
+            class="orden-productos"
+            id="orden-productos"
+            data-contenedor=".contenedor-productos"
+            data-tarjetas=".card"
+          >
+            <option value="">Relevancia</option>
+            <option value="asc">Menor precio</option>
+            <option value="desc">Mayor precio</option>
+          </select>
+        </div>
       </div>
 
       <p class="ayuda-imagen">Toca o haz clic en una imagen para verla en grande.</p>

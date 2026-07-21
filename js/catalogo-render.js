@@ -71,6 +71,7 @@ let CATEGORIA_ACTUAL = (localStorage.getItem(CLAVE_CATEGORIA_FILTRO) || "todos")
 // Principal
 function crearCardCatalogo(producto) {
   let div = crearDivCatalogo(producto.id, producto.categoria);
+  div.dataset.precio = producto.precio || 0;
   let img = crearImagen(producto.imagen, producto.nombre, "imagen-interactiva");
   let h3 = document.createElement("h3"); h3.innerText = producto.nombre;
   let pDescp = crearParrafo("descripcion",obtenerDescripcionProducto(producto));

@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarBuscadoresProductos();
   }
 
+  if (typeof inicializarOrdenPorPrecio === "function") {
+    inicializarOrdenPorPrecio();
+  }
+
   if (typeof inicializarWhatsappDestacados === "function") {
     inicializarWhatsappDestacados();
   }

@@ -107,6 +107,54 @@ function inicializarBuscadoresProductos() {
   });
 }
 
+// Lee el precio numerico de una tarjeta desde data-precio o el texto visible del precio.
+function obtenerPrecioTarjeta(tarjeta) {
+  if (tarjeta.dataset.precio) {
+    return parseFloat(tarjeta.dataset.precio) || 0;
+  }
+
+  const textoPrecio = tarjeta.querySelector(".precio-card, .precio-destacado")?.textContent || "";
+  return parseFloat(textoPrecio.replace(/[^\d.,]/g, "").replace(",", ".")) || 0;
+}
+
+// Activa el selector de orden por precio y lo sincroniza con el filtro de categoria y el buscador.
+function inicializarOrdenPorPrecio() {
+  const selectores = document.querySelectorAll(".orden-productos");
+
+  selectores.forEach((select) => {
+    const contenedor = document.querySelector(select.dataset.contenedor);
+    const buscador = contenedor
+      ?.closest("section")
+      ?.querySelector(".buscador-productos");
+
+    // Reordena solo las tarjetas visibles segun el orden elegido.
+    function ordenarTarjetasVisibles() {
+      if (!contenedor || !select.value) {
+        return;
+      }
+
+      const signo = select.value === "desc" ? -1 : 1;
+      const tarjetas = Array.from(contenedor.querySelectorAll(select.dataset.tarjetas));
+      const visibles = tarjetas.filter(
+        (tarjeta) =>
+          !tarjeta.classList.contains("oculto-categoria") &&
+          !tarjeta.classList.contains("oculto-busqueda")
+      );
+
+      visibles
+        .sort((a, b) => signo * (obtenerPrecioTarjeta(a) - obtenerPrecioTarjeta(b)))
+        .forEach((tarjeta) => contenedor.appendChild(tarjeta));
+    }
+
+    select.addEventListener("change", ordenarTarjetasVisibles);
+
+    // El filtro de categoria dispara "input" en el buscador; se aprovecha para reaplicar el orden.
+    if (buscador) {
+      buscador.addEventListener("input", ordenarTarjetasVisibles);
+    }
+  });
+}
+
 // Crea un modal reutilizable para ampliar imagenes del sitio.
 function inicializarGaleriaModal() {
   const imagenes = document.querySelectorAll(
