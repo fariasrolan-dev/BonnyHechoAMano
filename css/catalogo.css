@@ -213,6 +213,15 @@ tr:hover td {
   cursor: zoom-in;
 }
 
+/* Miniatura de producto en la tabla de precios */
+.miniatura-tabla {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 115, 85, 0.18);
+}
+
 .fila-precio-producto:focus-visible td {
   outline: 2px solid var(--rosa-oscuro);
   outline-offset: -2px;

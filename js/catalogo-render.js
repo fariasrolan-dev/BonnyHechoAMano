@@ -233,6 +233,14 @@ function inicializarCatalogo() {
   });
 }
 
+// Crea la celda con la miniatura del producto para la tabla de precios.
+function crearCeldaImagenTabla(producto) {
+  const celda = document.createElement("td");
+  celda.dataset.label = "Imagen";
+  celda.appendChild(crearImagen(producto.imagen, producto.nombre, "miniatura-tabla"));
+  return celda;
+}
+
 // Crea celdas de tabla con data-label para convertirlas en tarjetas en movil.
 function crearCeldaTabla(texto, etiqueta) {
   const celda = document.createElement("td");
@@ -264,6 +272,7 @@ function inicializarTablaPreciosDesdeDatos() {
       fila.setAttribute("aria-label", `Ver imagen de ${producto.nombre}`);
       fila.setAttribute("title", `Ver imagen de ${producto.nombre}`);
 
+      fila.appendChild(crearCeldaImagenTabla(producto));
       fila.appendChild(crearCeldaTabla(producto.nombre, "Producto"));
       fila.appendChild(crearCeldaTabla(categoria, "Categoria"));
       fila.appendChild(crearCeldaTabla(obtenerPrecioVisible(producto.precio), "Precio"));
