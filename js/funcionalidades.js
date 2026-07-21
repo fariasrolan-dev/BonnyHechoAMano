@@ -214,8 +214,11 @@ function crearBotonWhatsappDestacado(nombre, urlImagen) {
 }
 
 // Agrega el boton de WhatsApp a cada card de productos destacados.
+// Excluye el contenedor con data-catalogo porque ese ya arma su propio boton en catalogo-render.js.
 function inicializarWhatsappDestacados() {
-  const cards = document.querySelectorAll(".productos .contenedor-productos .card");
+  const cards = document.querySelectorAll(
+    ".productos .contenedor-productos:not([data-catalogo]) .card"
+  );
 
   cards.forEach((card) => {
     const nombre = card.querySelector("h3")?.textContent.trim();
